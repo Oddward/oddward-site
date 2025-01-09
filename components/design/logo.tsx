@@ -1,6 +1,6 @@
 export const Logo = () => {
     return (
-        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style={{width: '100%', height: 'auto'}}>
             <path d="M64 32C64 37.6251 62.5488 42.9111 60 47.5041V44C60 32 48 32 48 32V50.9999C48 54.2628 48.7559 56.7066 49.8883 58.5372C44.7816 61.986 38.626 64 32 64C14.3269 64 0 49.6732 0 32C0 28.5078 0.559412 25.1462 1.59351 22H62.4066C63.4407 25.1462 64 28.5078 64 32Z" fill="white"/>
             <path d="M49.8883 58.5372C53.2676 64 60 64 60 64V47.5042C57.5432 51.9314 54.067 55.7146 49.8883 58.5372Z" fill="white"/>
             <path d="M6.32803 14.576L3.44803 7.856C3.14936 7.216 3 6.78933 3 6.576C3 6.32 3.08536 6.17067 3.25603 6.128C3.46936 6.04267 3.70403 6 3.96 6H6.52003C6.9467 6 7.2667 6.10667 7.48003 6.32C7.73603 6.53333 7.992 6.87467 8.248 7.344L11.064 13.872C11.192 14.2133 11.2774 14.4693 11.32 14.64C11.3627 14.768 11.4054 14.896 11.448 15.024C11.448 15.3653 11.384 15.6 11.256 15.728C11.128 15.856 10.8293 15.92 10.36 15.92H8.05603C7.3307 15.92 6.7547 15.472 6.32803 14.576Z" fill="white"/>
@@ -9,9 +9,9 @@ export const Logo = () => {
             <path d="M57.0001 16C59.2093 16 61.0001 14.2091 61.0001 12C61.0001 9.79086 59.2093 8 57.0001 8C54.791 8 53.0001 9.79086 53.0001 12C53.0001 14.2091 54.791 16 57.0001 16Z" fill="url(#paint0_radial_237_118)"/>
             <defs>
             <radialGradient id="paint0_radial_237_118" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(53.0001 16) rotate(-44.6397) scale(22.4864)">
-            <stop stop-color="#FFB800"/>
-            <stop offset="0.296875" stop-color="#FF001F"/>
-            <stop offset="1" stop-color="#00A3FF"/>
+            <stop stopColor="#FFB800"/>
+            <stop offset="0.296875" stopColor="#FF001F"/>
+            <stop offset="1" stopColor="#00A3FF"/>
             </radialGradient>
             </defs>
         </svg>

@@ -3,12 +3,10 @@ import { Geist, Geist_Mono, Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 import { Container, Flex } from "@chakra-ui/react";
 import { Provider } from "@/components/ui/provider";
-import { css } from "@emotion/react";
-import { useColorModeValue } from "@/components/ui/color-mode";
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-be-vietnam-pro",
-  weight: ["200", "900"],
+  weight: ["200", "500", "700", "900"],
   subsets: ["latin"],
 })
 
@@ -41,7 +39,7 @@ export default function RootLayout({
           <Container marginInline={'auto'} maxW="breakpoint-lg" p={4} spaceY={8}>
             {children}
             <Flex color={'fg.muted'} justifyContent={'between'} py={4} mt={16}>
-                {`@${new Date().getFullYear()} Mugtaba G | oddward.space`}
+                {`@${new Date().getFullYear()} Mugtaba G // oddward`}
             </Flex>
           </Container>
         </Provider>

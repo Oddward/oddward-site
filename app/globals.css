@@ -2,15 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import url('https://api.fontshare.com/v2/css?f[]=beVietnam-pro@1,2&display=swap'); */
-/* @font-face {
-  font-family: 'Be Vietnam Pro';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url('https://api.fontshare.com/v2/fonts/beVietnam-pro/1/woff2') format('woff2');
+/* @font-feature-values "Be Vietnam Pro" {
+  @styleset {
+
+  }
 } */
-/* font-family: 'Be Vietnam Pro', sans-serif; */
 
 
 
@@ -29,5 +25,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Be Vietnam Pro", Arial, Helvetica, sans-serif;
 }

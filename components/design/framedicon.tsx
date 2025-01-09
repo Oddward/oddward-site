@@ -7,7 +7,7 @@ interface FramedIconProps {
 
 export const FramedIcon: React.FC<FramedIconProps> = ({ children }) => {
     return (
-        <Card.Root w={20} h={20} aspectRatio={'1/1'} fontSize={'4xl'} borderRadius="2xl" bg={useColorModeValue("gray.100", "gray.800")} color={useColorModeValue("gray.500", "gray.400")} flexGrow={0} justifyContent="center" alignItems="center" variant={'outline'}>
+        <Card.Root w="full" h="auto" aspectRatio={'1/1'} fontSize={'4xl'} borderRadius="2xl" border="solid .5px" borderColor="fg.subtle" bg={useColorModeValue("gray.100", "gray.800")} color={useColorModeValue("gray.500", "gray.400")} flexGrow={0} justifyContent="center" alignItems="center" variant={'outline'} p={6} boxSizing="border-box">
             {children}
         </Card.Root>
     )
