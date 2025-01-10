@@ -12,11 +12,11 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
-    ignorePatterns: [
-      'node_modules/', 
-      '.next/', 
-      'public/',
-      'components/ui/',
+    ignores: [
+      '**/node_modules/**', 
+      '**/.next/**', 
+      '**/public/**',
+      '**/components/ui/**',
     ],
     rules: {
       '@typescript-eslint/no-unused-vars': ['warn', {
