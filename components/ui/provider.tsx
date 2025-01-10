@@ -1,35 +1,12 @@
 "use client"
 
-import { ChakraProvider, createSystem, defaultConfig, defaultSystem, defineConfig, defineRecipe, defineSlotRecipe } from "@chakra-ui/react"
+import { ChakraProvider, createSystem, defaultConfig, defineConfig, defineSlotRecipe } from "@chakra-ui/react"
 import {
   ColorModeProvider,
   type ColorModeProviderProps,
 } from "./color-mode"
 import colors from "tailwindcss/colors"
 import { cardAnatomy } from "@chakra-ui/react/anatomy"
-
-const cardRecipe = defineRecipe({
-  base: {
-    borderRadius: 'xl'
-  },
-  variants: {
-    variant: {
-      outline: {
-        borderRadius: 'xl',
-        bgColor: 'transparent',
-      },
-      styled: {
-        borderRadius: 'xl',
-        bg: 'transparent'
-      }
-    },
-    size: {
-      l3: {
-        borderRadius: 'xl'
-      }
-    }
-  }
-})
 
 const cardSlotRecipe = defineSlotRecipe({
   slots: cardAnatomy.keys(),

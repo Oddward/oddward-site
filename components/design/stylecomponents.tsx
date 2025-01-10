@@ -1,3 +1,7 @@
 import { Text } from "@chakra-ui/react"
 
-export const WarmText = ({ children }) => <Text as={'span'} bgGradient={'warm'} bgClip={'text'}>{children}</Text>
+type wrapper = {
+    children: React.ReactNode
+}
+
+export const WarmText = ({ children }: wrapper) => <Text as={'span'} bgGradient={'warm'} bgClip={'text'}>{children}</Text>
