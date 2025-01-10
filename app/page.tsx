@@ -1,18 +1,16 @@
 'use client'
 
-import { WarmText } from "@/components/design/stylecomponents";
+// import { WarmText } from "@/components/design/stylecomponents";
 import { FramedIcon } from "@/components/design/framedicon";
 import PillText from "@/components/design/pilltext";
 import ProfileImage from "@/components/design/profileimage";
-import { Box, Card, Grid, Highlight, HStack, Image, Link, LinkBox, LinkOverlay, List, Stack, Text, VStack } from "@chakra-ui/react";
-import NextImage from "next/image";
+import { Box, Card, Grid, Highlight, Image, Link, LinkOverlay, List, Stack, Text } from "@chakra-ui/react";
 import { DiCss3, DiFirebase, DiHtml5, DiReact, } from "react-icons/di";
 import { LuFigma } from "react-icons/lu";
 import { RiArrowRightLine, RiGridLine, RiNextjsFill, RiQuillPenFill, RiTeamLine, RiVuejsFill } from "react-icons/ri";
 import { SiAffinity, SiBlender } from "react-icons/si";
 import { DividerHeading } from "@/components/design/dividerheading";
 import ProjectCard from "@/components/design/projectcard";
-import { css } from "@emotion/react";
 import { BentoCard } from "@/components/design/bentocard";
 import { Navbar } from "@/components/design/navbar";
 

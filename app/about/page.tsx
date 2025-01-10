@@ -3,7 +3,7 @@
 import { DividerHeading } from "@/components/design/dividerheading";
 import { FramedIcon } from "@/components/design/framedicon";
 import { Navbar } from "@/components/design/navbar";
-import { Box, Card, Flex, Grid, HStack, Image, Link, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Card, Flex, Grid, HStack, Image, Link, Text } from "@chakra-ui/react";
 import { DiCss3, DiFirebase, DiHtml5, DiReact, } from "react-icons/di";
 import { SiAffinity, SiBlender, SiFigma } from "react-icons/si";
 import { RiNextjsFill, RiVuejsFill } from "react-icons/ri";

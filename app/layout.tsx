@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Be_Vietnam_Pro } from "next/font/google";
+import { Geist_Mono, Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 import { Container, Flex } from "@chakra-ui/react";
 import { Provider } from "@/components/ui/provider";
