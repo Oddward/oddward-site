@@ -8,7 +8,7 @@ import { Box, Card, Grid, Highlight, HStack, Image, Link, LinkBox, LinkOverlay, 
 import NextImage from "next/image";
 import { DiCss3, DiFirebase, DiHtml5, DiReact, } from "react-icons/di";
 import { LuFigma } from "react-icons/lu";
-import { RiArrowRightLine, RiGridLine, RiNextjsFill, RiTeamLine, RiVuejsFill } from "react-icons/ri";
+import { RiArrowRightLine, RiGridLine, RiNextjsFill, RiQuillPenFill, RiTeamLine, RiVuejsFill } from "react-icons/ri";
 import { SiAffinity, SiBlender } from "react-icons/si";
 import { DividerHeading } from "@/components/design/dividerheading";
 import ProjectCard from "@/components/design/projectcard";
@@ -16,34 +16,34 @@ import { css } from "@emotion/react";
 import { BentoCard } from "@/components/design/bentocard";
 import { Navbar } from "@/components/design/navbar";
 
-const projectCardStyles = css`
-  
-  `
-
 export default function Home() {
   return (
     <>
       <Box as={'header'}>
         {/* <Image src={'/logo.svg'} alt={'Oddward.space'} width={100} height={100} /> */}
-        <Text as={'h1'} fontSize={115} fontWeight={'bold'} fontVariantLigatures="ss01">
+        <Text as={'h1'} fontSize={'clamp(2rem, 11vw, 7.7rem)'} fontWeight={'bold'} fontVariantLigatures="ss01">
           oddward<Text as="span" color="fg.muted">.space</Text>
         </Text>
       </Box>
 
-      <Grid as={'section'} templateColumns="3.7fr 7fr" templateAreas="'img tagline' 'img icons'" gap={4}>
+      <Grid as={'section'} templateColumns="3.7fr 7fr" templateAreas={{
+        base: "'img img' 'tagline tagline' 'icons icons'",
+        md: "'img tagline' 'icons icons'",
+        lg: "'img tagline' 'img icons'"
+      }} gap={4}>
         {/* <Box w={'40%'} h={'auto'}> */}
         <Box w={'100%'} h={'auto'} aspectRatio={1/1} gridArea="img">
             <ProfileImage />
         </Box>
         {/* <VStack h={'full'} justify={'flex-start'} alignItems={'flex-start'}> */}
-          <Text as={'h2'} fontSize={'3xl'} fontWeight="semibold" lineHeight={1.1}>
+          <Text as={'h2'} fontSize={'3xl'} fontWeight="semibold" lineHeight={1.1} gridArea={'tagline'} mdToLg={{fontSize:'4xl'}}>
             <Highlight 
               query={['visual arts', 'software', 'tech']}
               styles={{bgGradient:'warm', bgClip:'text'}}>
               On a voyage to design, develop & deliver meaningful human experiences along the nexus of visual arts, software & tech.
             </Highlight>
           </Text>
-          <Grid templateColumns={'repeat(5, 1fr)'} gap={6} w="90%">
+          <Grid templateColumns={'repeat(auto-fit, minmax(4rem, 1fr))'} autoColumns={''} gap={6} w="90%" gridArea={'icons'}>
             <FramedIcon><DiHtml5 /></FramedIcon>
             <FramedIcon><DiCss3 /></FramedIcon>
             <FramedIcon><DiReact /></FramedIcon>
@@ -100,13 +100,14 @@ export default function Home() {
           </List.Root>
         </Box>
         <Box gridArea={'post'}>
-          <Card.Root variant={'outline'} bgBlendMode={'multiply'} bg="bg.subtle" borderRadius={8}>
+          <Card.Root variant={'outline'} bgBlendMode={'multiply'} bg="bg.subtle" borderRadius={8} h={'full'} className="group">
             <Card.Header>
               <Image src="/pex-3243090.jpg" alt="Oddward.space" width="100%" height="auto" aspectRatio="16/9" className="aspect-video w-full h-auto rounded-lg" />
             </Card.Header>
-            <Card.Body>
-              <Text as={'h3'} fontSize={'lg'} fontWeight={'bold'}>Sample link title here</Text>
+            <Card.Body _groupHover={{color:'colorPalette.solid'}}>
+              <Text as={'h3'} fontSize={'lg'} fontWeight={'bold'}>Literary musings... <RiQuillPenFill /></Text>
             </Card.Body>
+            <LinkOverlay href={'https://garden.oddward.space'} />
           </Card.Root>
         </Box>
       </Grid>

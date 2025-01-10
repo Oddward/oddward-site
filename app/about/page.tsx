@@ -3,10 +3,11 @@
 import { DividerHeading } from "@/components/design/dividerheading";
 import { FramedIcon } from "@/components/design/framedicon";
 import { Navbar } from "@/components/design/navbar";
-import { Box, Card, Flex, Grid, Image, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Card, Flex, Grid, HStack, Image, Link, Stack, Text, VStack } from "@chakra-ui/react";
 import { DiCss3, DiFirebase, DiHtml5, DiReact, } from "react-icons/di";
 import { SiAffinity, SiBlender, SiFigma } from "react-icons/si";
 import { RiNextjsFill, RiVuejsFill } from "react-icons/ri";
+import { socials } from "@/lib/profile";
 
 
 export default function About() {
@@ -15,18 +16,29 @@ export default function About() {
         <Navbar />
 
         <Box as={'section'} py={16} px={4}>
-            <Card.Root variant={'subtle'} bgColor={'bg.subtle'}>
+            <Card.Root variant={'outline'} bgColor={'transparent'}>
                 <Card.Body>
-                    <Grid templateColumns={'1fr 2fr'} gap={4}>
-                        <Flex justifyContent={'center'}>
+                    <Grid templateColumns={{md:'1fr 2fr'}} templateAreas={{
+                        base: "'pfp' 'title' 'desc'",
+                        md: "'pfp title' 'desc desc'",
+                        lg: "'pfp title' 'pfp desc'",
+                    }} gap={4} alignItems={'end'}>
+                        <Flex justifyContent={'center'} gridArea={'pfp'}>
                             <Image src="/me_halftonegrad.jpg" alt="A placeholder image" width={'auto'} height={'full'} maxW={200} aspectRatio={1/1.5} border="solid 1px --chakra-colors-color-palette-subtle" borderRadius="full" />
                         </Flex>
-                        <Box>
+                        <Box gridArea={'title'}>
                             <Text as="h2" fontSize="4xl" fontWeight={'black'} bgGradient="warm" bgClip={'text'} textTransform={'uppercase'} w={'auto'}>Mugtaba Garoot</Text>
                             <Text as="span" fontSize="md" color="fg.muted">Developer // Designer // Digital content creator</Text>
-                            <Text mt={4}>Computer science graduate who’s passionate about all things art. I have some junior experience in web development, freelance experience in graphic design and social media, and a lot of self-learning.</Text>
-                            <Text mt={4}>Usually found consuming tonnes of media (especially animation), practicing web development and graphic design, gaming, and/or hanging out on a discord chat.</Text>
                         </Box>
+                        <Flex flexDir={'column'} gap={4} gridArea={'desc'}>
+                            <Text mt={4}>Computer science graduate who’s passionate about all things art. Mostly self-taught with some experience in web development, website management, graphic design and social media management, and a lot of self-learning.</Text>
+                            <Text mt={4}>Usually found consuming tonnes of media (especially animation), practicing web development and graphic design, gaming, and/or hanging out on a discord chat.</Text>
+                            <HStack gap={4}>
+                                {socials.map((social, i) => (
+                                    <Link key={i} href={social.href} fontSize="md" color="fg.muted" _hover={{color:"colorPalette.solid"}}>{social.icon}</Link>
+                                ))}
+                            </HStack>
+                        </Flex>
                     </Grid>
                 </Card.Body>
             </Card.Root>
@@ -42,14 +54,14 @@ export default function About() {
         <Card.Root variant={'outline'} bgColor={'unset'}>
             <Card.Body>
                 <Flex flexDir={'column'} gap={2}>
-                    <Text>Solid fundamentals in HTML5, CSS3, and some JS and TypeScript, with a focus on frontend design.</Text>
+                    <Text>Solid fundamentals in HTML5, CSS3, and some JS and TypeScript, with a focus on frontend design & development.</Text>
                     <Text>Main stack currently: Nextjs + TailwindCSS/Chakra UI + Nodejs + Firebase</Text>
                     <Text>Currently working on a couple of personal and team-based projects to improve my skills and build a product. Exploring cross-platform development with React Native and Expo, and some backend SaaS. I also try to utilize Figma and similar tools for drafts and prototyping.</Text>
                 </Flex>
             </Card.Body>
         </Card.Root>
 
-        <Grid templateColumns={'repeat(7, 1fr)'} gap={6} w="90%">
+        <Grid templateColumns={'repeat(auto-fit, minmax(6rem,6rem))'} justifyItems={'center'} gap={6} w="100%">
             <FramedIcon><DiHtml5 /></FramedIcon>
             <FramedIcon><DiCss3 /></FramedIcon>
             <FramedIcon><DiReact /></FramedIcon>
@@ -69,7 +81,7 @@ export default function About() {
             </Card.Body>
         </Card.Root>
 
-        <Grid templateColumns={'repeat(7, 1fr)'} gap={6} w="90%">
+        <Grid templateColumns={'repeat(auto-fit, minmax(6rem,6rem))'} justifyItems={'center'} gap={6} w="100%">
             <FramedIcon><DiHtml5 /></FramedIcon>
             <FramedIcon><DiCss3 /></FramedIcon>
             <FramedIcon><SiFigma /></FramedIcon>

@@ -33,9 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${beVietnamPro.variable} ${geistMono.variable} antialiased dark:bg-slate-900`}
+        className={`${beVietnamPro.variable} ${geistMono.variable} antialiased`}
       >
         <Provider>
+          <div className="w-full p-2 bg-black text-white text-center">
+            website under construction
+          </div>
           <Container marginInline={'auto'} maxW="breakpoint-lg" p={4} spaceY={8}>
             {children}
             <Flex color={'fg.muted'} justifyContent={'between'} py={4} mt={16}>

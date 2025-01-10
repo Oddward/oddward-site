@@ -1,11 +1,50 @@
 "use client"
 
-import { ChakraProvider, createSystem, defaultConfig, defaultSystem, defineConfig } from "@chakra-ui/react"
+import { ChakraProvider, createSystem, defaultConfig, defaultSystem, defineConfig, defineRecipe, defineSlotRecipe } from "@chakra-ui/react"
 import {
   ColorModeProvider,
   type ColorModeProviderProps,
 } from "./color-mode"
 import colors from "tailwindcss/colors"
+import { cardAnatomy } from "@chakra-ui/react/anatomy"
+
+const cardRecipe = defineRecipe({
+  base: {
+    borderRadius: 'xl'
+  },
+  variants: {
+    variant: {
+      outline: {
+        borderRadius: 'xl',
+        bgColor: 'transparent',
+      },
+      styled: {
+        borderRadius: 'xl',
+        bg: 'transparent'
+      }
+    },
+    size: {
+      l3: {
+        borderRadius: 'xl'
+      }
+    }
+  }
+})
+
+const cardSlotRecipe = defineSlotRecipe({
+  slots: cardAnatomy.keys(),
+  variants: {
+    variant: {
+      outline: {
+        root: {
+          bg: 'transparent',
+          borderColor: 'border',
+          borderRadius: 'xl'
+        }
+      }
+    }
+  }
+})
 
 const config = defineConfig({
   theme: {
@@ -21,17 +60,24 @@ const config = defineConfig({
     semanticTokens: {
       colors: {
         bg: {
+          base: { value: colors.slate[500] },
           subtle: { value: colors.slate[800] },
-        }
+          l1: { value: colors.slate[700] },
+        },
+        border: { value: colors.slate[700] },
       }
+    },
+    slotRecipes: {
+      card: cardSlotRecipe
     }
   },
   globalCss: {
-    html: {
+    "html": {
       colorPalette: "yellow"
     },
-    body: {
-      bg: {_dark: "blue.950", _light: "yellow.100"}
+    "body": {
+      bg: colors.slate[900]
+      // bg: {_dark: {"blue.950"}, _light: "yellow.100"}
     }
   }
 })

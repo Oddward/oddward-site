@@ -1,25 +1,34 @@
 import { Box, Grid, Link, List, Text } from "@chakra-ui/react"
 import Logo from "./logo"
+import colors from "tailwindcss/colors"
 
+const pages = [
+    {name: 'home', href: '/'},
+    {name: 'about', href: '/about'},
+]
 
 export const Navbar: React.FC = ({...props}) => {
     return (
-        <Box as={'nav'} p={4} {...props}>
-            <Grid templateColumns={'auto 1fr auto'} alignItems={'center'} h={'auto'} borderBottom={'solid .5px var(--bg.subtle)'}>
+        <Box as={'nav'} 
+            position={'sticky'} p={4} 
+            top={0} zIndex={100}
+            bg={colors.slate[900]} 
+            borderBottom={'solid .5px var(--chakra-colors-bg-subtle)'} {...props}>
+            <Grid templateColumns={'auto 1fr auto'} alignItems={'center'}>
                 <Box w={8} h={8}>
                     <Logo  />
                 </Box>
                 <List.Root flexDir={'row'} justifyContent={'center'} gap={4} listStyle={'none'}>
-                    <List.Item>
-                        <Link href={'/'}>home</Link>
-                    </List.Item>
-                    <List.Item>
-                        <Link href={'/about'}>about</Link>
-                    </List.Item>
+                    {pages.map((page) => (
+                        <List.Item key={page.name}>
+                            <Link href={page.href} color={'fg.muted'} 
+                                _hover={{color:'colorPalette.fg'}}>{page.name}</Link>
+                        </List.Item>
+                    ))}
                 </List.Root>
-                <Box>
+                <Link href={'/'} variant={'plain'}>
                     <Text color="fg.muted" fontWeight="bold" fontSize="lg">oddward.space</Text>
-                </Box>
+                </Link>
             </Grid>
         </Box>
     )
