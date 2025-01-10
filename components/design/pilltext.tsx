@@ -6,10 +6,10 @@ interface PillTextProps {
     text: string
     children?: ReactNode
     className?: string
-    [key: string]: any
+    bg?: string
 }
 
-export const PillText: React.FC<PillTextProps> = ({ text, children, bg }) => {
+export const PillText: React.FC<PillTextProps> = ({ text, children, bg, ...props }) => {
     return (
         <Flex
             display="inline-flex"
@@ -19,6 +19,7 @@ export const PillText: React.FC<PillTextProps> = ({ text, children, bg }) => {
             py={2}
             borderRadius="full"
             bg={bg ? bg : useColorModeValue("gray.100", "gray.800")}
+            {...props}
         >
             <Text fontSize="md" fontWeight="medium">{text}</Text>
             {/* {children && <Box ml={2}>{children}</Box>} */}
