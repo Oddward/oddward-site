@@ -2,6 +2,8 @@ import { Flex, Text } from '@chakra-ui/react'
 import { ReactNode } from 'react'
 import { useColorModeValue } from '../ui/color-mode'
 
+const bgColors = useColorModeValue("gray.100", "gray.800")
+
 interface PillTextProps {
     text: string
     children?: ReactNode
@@ -12,7 +14,7 @@ interface PillTextProps {
 export const PillText: React.FC<PillTextProps> = ({ 
     text, 
     children, 
-    bg = useColorModeValue("gray.100", "gray.800"),
+    bg = bgColors,
     ...props 
 }) => {
     return (
