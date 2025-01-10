@@ -9,7 +9,12 @@ interface PillTextProps {
     bg?: string
 }
 
-export const PillText: React.FC<PillTextProps> = ({ text, children, bg, ...props }) => {
+export const PillText: React.FC<PillTextProps> = ({ 
+    text, 
+    children, 
+    bg = useColorModeValue("gray.100", "gray.800"),
+    ...props 
+}) => {
     return (
         <Flex
             display="inline-flex"
@@ -18,7 +23,7 @@ export const PillText: React.FC<PillTextProps> = ({ text, children, bg, ...props
             px={4}
             py={2}
             borderRadius="full"
-            bg={bg ? bg : useColorModeValue("gray.100", "gray.800")}
+            bg={bg}
             {...props}
         >
             <Text fontSize="md" fontWeight="medium">{text}</Text>
