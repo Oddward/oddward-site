@@ -14,10 +14,10 @@ const eslintConfig = [
   {
     files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
     ignores: [
-      '**/node_modules/**', 
-      '**/.next/**', 
-      '**/public/**',
-      '**/components/ui/**',
+      'node_modules/**', 
+      '.next/**', 
+      'public/**',
+      'components/ui/**',
     ],
     rules: {
       '@typescript-eslint/no-unused-vars': ['warn', {
