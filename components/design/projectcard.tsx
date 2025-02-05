@@ -9,8 +9,10 @@ export default function ProjectCard({
     return(
         <Link href={href}
             display="inline-block"
-            w={{ base: "300px", lg: "400px" }}
-            h={{ base: "225px", lg: "300px" }}
+            // w={{ base: "300px", lg: "400px" }}
+            // h={{ base: "225px", lg: "300px" }}
+            w={'full'} h={'auto'}
+            aspectRatio={4/3}
             borderRadius="lg"
             fontSize={{ base: "xl", lg: "2xl" }}
             fontWeight="semibold"
@@ -20,7 +22,7 @@ export default function ProjectCard({
             borderColor="gray.900"
             _hover={{ borderColor: "gray.500" }}
             bgImage={`url("${src}")`}
-            bgSize="contain"
+            bgSize="cover"
             bgRepeat="no-repeat"
         >
             <Box

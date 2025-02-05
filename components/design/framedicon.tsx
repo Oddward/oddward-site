@@ -1,3 +1,4 @@
+'use client'
 import { Card } from "@chakra-ui/react"
 import { useColorModeValue } from "../ui/color-mode"
 

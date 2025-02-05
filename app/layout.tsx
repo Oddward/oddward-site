@@ -21,8 +21,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Welcome to the Oddward.space",
-  description: "Website of Mugtaba 'Oddward' G.",
+  title: "Oddward space // Digital creative portal",
+  description: "A digital creative space for Mugtaba G, a.k.a. Oddward. Find design projects, dev projects, writing and more.",
+  keywords: ["design", "development", "writing", "portfolio", "mugtaba", "oddward", "garoot", "oddward space", "oddward g", "mugtaba g", "web design", "web development", "sudanese developer", "sudanese designer"],
 };
 
 export default function RootLayout({
@@ -41,7 +42,7 @@ export default function RootLayout({
           </div>
           <Container marginInline={'auto'} maxW="breakpoint-lg" p={4} spaceY={8}>
             {children}
-            <Flex color={'fg.muted'} justifyContent={'between'} py={4} mt={16}>
+            <Flex as={'footer'} color={'fg.muted'} justifyContent={'between'} py={'3rem 1.5rem'} mt={16}>
                 {`@${new Date().getFullYear()} Mugtaba G // oddward`}
             </Flex>
           </Container>

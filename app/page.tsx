@@ -1,18 +1,17 @@
-'use client'
-
 // import { WarmText } from "@/components/design/stylecomponents";
 import { FramedIcon } from "@/components/design/framedicon";
 import PillText from "@/components/design/pilltext";
 import ProfileImage from "@/components/design/profileimage";
-import { Box, Card, Grid, Highlight, Image, Link, LinkOverlay, List, Stack, Text } from "@chakra-ui/react";
+import { Box, Card, Grid, GridItem, Heading, Highlight, Icon, Image, Link, LinkOverlay, List, SimpleGrid, Text } from "@chakra-ui/react";
 import { DiCss3, DiFirebase, DiHtml5, DiReact, } from "react-icons/di";
 import { LuFigma } from "react-icons/lu";
-import { RiArrowRightLine, RiGridLine, RiNextjsFill, RiQuillPenFill, RiTeamLine, RiVuejsFill } from "react-icons/ri";
+import { RiArrowRightLine, RiExternalLinkLine, RiNextjsFill, RiQuillPenFill, RiTeamLine, RiVuejsFill } from "react-icons/ri";
 import { SiAffinity, SiBlender } from "react-icons/si";
 import { DividerHeading } from "@/components/design/dividerheading";
 import ProjectCard from "@/components/design/projectcard";
 import { BentoCard } from "@/components/design/bentocard";
 import { Navbar } from "@/components/design/navbar";
+import ProjectGrid from "@/components/design/projectgrid";
 
 export default function Home() {
   return (
@@ -65,23 +64,39 @@ export default function Home() {
         <PillText text={'Branding'} />
       </Box>
 
-      <Navbar  />
+      <Navbar />
 
-      <Grid as={'section'} templateColumns={'1fr 1fr'} templateAreas={`'current post' 'links post'`} gap={'4'}>
-        <Box p={4} borderRadius={8} gridArea={'current'} className="bg-slate-800">
+      <Grid as={'section'} 
+      templateColumns={{base:'1fr', md:'1fr 1fr'}} 
+      // templateAreas={`'current post' 'links post'`} 
+      gap={'4'}
+      >
+        <GridItem 
+        // gridArea={'current'}
+        // h={'full'}
+        borderRadius={'md'} 
+        p={4} 
+        _hover={{bg:'fg/7'}} 
+        >
           <Text as={'h3'} fontSize={'md'} fontWeight={'bold'} display={'flex'} alignItems={'center'} gap={2}>
             <RiTeamLine /> Current associations
           </Text>
-          <List.Root fontSize="lg" fontWeight="bold" listStyle="none" mt={2}>
+          <List.Root fontSize="lg" fontWeight="bold" listStyle="none" spaceY={4} mt={2}>
             <List.Item>
-              KushTech Dynamics
+              <Link href={'https://www.kushtechdynamics.com'}>
+                KushTech Dynamics <RiExternalLinkLine />
+              </Link>
+              <Text fontSize="md" color="fg.subtle">Product management, design</Text>
             </List.Item>
             <List.Item>
-              Niagara Launcher
+              <Link href={'https://www.niagaralauncher.app'}>
+                Niagara Launcher <RiExternalLinkLine />
+              </Link>
+              <Text fontSize="md" color="fg.subtle">Community management, design</Text>
             </List.Item>
           </List.Root>
-        </Box>
-        <Box p={4} borderRadius={8} gridArea={'links'} className="bg-slate-800">
+        </GridItem>
+        {/* <Box p={4} borderRadius={8} gridArea={'links'} className="bg-slate-800">
           <Text as={'h3'} fontSize={'md'} fontWeight={'bold'} display={'flex'} alignItems={'center'} gap={2}>
             <RiGridLine /> Content
           </Text>
@@ -90,31 +105,46 @@ export default function Home() {
               <Link href={'https://bento.me/oddward'}>Bento links</Link>
             </List.Item>
             <List.Item>
-              <Link href={'#'}>Writing</Link>
+              <Link href={'https://'}>Writing</Link>
             </List.Item>
             <List.Item>
               <Link href={'https://read.cv/mugtaba.g'}>CV</Link>
             </List.Item>
           </List.Root>
-        </Box>
-        <Box gridArea={'post'}>
-          <Card.Root variant={'outline'} bgBlendMode={'multiply'} bg="bg.subtle" borderRadius={8} h={'full'} className="group">
+        </Box> */}
+        <GridItem 
+        // gridArea={'post'}
+        borderRadius={'sm'} 
+        _hover={{bg:'fg/7'}} 
+        >
+          <Card.Root variant={'outline'}
+          className="group"
+          >
             <Card.Header>
-              <Image src="/pex-3243090.jpg" alt="Oddward.space" width="100%" height="auto" aspectRatio="16/9" className="aspect-video w-full h-auto rounded-lg" />
+              <Image 
+              src="/img/pex-3243090.jpg" 
+              alt="Oddward.space" 
+              w="100%" h="auto" aspectRatio="16/9" 
+              borderRadius={'md'} 
+              />
             </Card.Header>
             <Card.Body _groupHover={{color:'colorPalette.solid'}}>
-              <Text as={'h3'} fontSize={'lg'} fontWeight={'bold'}>Literary musings... <RiQuillPenFill /></Text>
+              <Heading as={'h3'} fontSize={'lg'} fontWeight={'bold'}>Digital Garden <Icon><RiQuillPenFill /></Icon></Heading>
+              <Text fontSize={'md'} color={'fg.subtle'}>A public knowledge base of notes, thoughts, and ideas (wip).</Text>
             </Card.Body>
             <LinkOverlay href={'https://garden.oddward.space'} />
           </Card.Root>
-        </Box>
+        </GridItem>
       </Grid>
 
       <DividerHeading title="Stuff" />
-      <Grid gridTemplateAreas={`
-        "dribbble github insta"
-        "dribbble insta2 other"
-      `} gap={4}>
+      <Grid gridTemplateAreas={{
+        base: `"dribbble dribbble"
+              "github insta"
+              "insta2 other"`,
+        md:`"dribbble github insta"
+            "dribbble insta2 other"`
+      }} gap={4}>
         <BentoCard 
           title="Dribbble" 
           subtitle="design portfolio @oddward" 
@@ -144,19 +174,41 @@ export default function Home() {
           gridArea="insta2" 
           bgGradient="instagram" />
 
-        <BentoCard 
-          title="Other links..." 
-          subtitle="design portfolio @oddward" 
+        {/* <BentoCard 
+          title="TBD..." 
+          subtitle="" 
           href="#" 
-          gridArea="other" />
+          gridArea="other" /> */}
       </Grid>
 
       <DividerHeading title="Projects" />
 
-      <Stack as="section" direction="row" gap={4}>
-        <ProjectCard href="https://github.com/Oddward/project-music-e" title="React music app (paused)" src="/Dribbble shot - reactmusic_hd2.png" />
-        <ProjectCard href="https://github.com/Oddward/nl-setups" title="Launcher setups platform (paused)" src="/NLSetups - User Profile ss.png" />
-      </Stack>
+      <Box as="section" id="projects">
+        <ProjectGrid 
+          title="KushTech Dynamics full branding" 
+          description="Logo design, social media content design and website design & development with KushTech Dynamics. More to come."
+          link="https://dribbble.com/shots/24387428-Rebranding-business-portfolio-SIGS?utm_source=Clipboard_Shot&utm_campaign=Oddward&utm_content=Rebranding%2C%20business%20portfolio%20%E2%80%94%20SIGS&utm_medium=Oddward_Space"
+        >
+          <Image src="/img/project-kdbrandlogos.jpg" alt="KushTech Dynamics combomarks" />
+          <Image src="/img/project-kdbrandbento.jpg" alt="KushTech Dynamics bento" />
+        </ProjectGrid>
+
+        <ProjectGrid 
+          title="SIGS Rebranding & Print Portfolio" 
+          description="Rebranding, business portfolio design and print design with Sudan International Grammar School, along with a booklet design (using photos I took for the school). Was setting up a design language for the school's marketing materials including social media profiles and content. More details on Dribbble."
+          link="https://dribbble.com/shots/24387428-Rebranding-business-portfolio-SIGS?utm_source=Clipboard_Shot&utm_campaign=Oddward&utm_content=Rebranding%2C%20business%20portfolio%20%E2%80%94%20SIGS&utm_medium=Oddward_Space"
+        >
+          <Image src="/img/project-school.jpg" alt="SIGS business portfolio" />
+          <Image src="/img/project-schoolbooklet.jpg" alt="SIGS booklet design" />
+        </ProjectGrid>
+
+        <Heading as="h3" size="lg" fontWeight={'bold'} mb={4}>Dev projects</Heading>
+
+        <SimpleGrid columns={{base:1, md:2}} gap={4}>
+          <ProjectCard href="https://github.com/Oddward/project-music-e" title="React music app (on hold)" src="/img/project-music.jpg" />
+          <ProjectCard href="https://github.com/Oddward/nl-setups" title="Launcher setups platform (on hold)" src="/img/NLSetups - User Profile ss.png" />
+        </SimpleGrid>
+      </Box>
     </>
   );
 }

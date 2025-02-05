@@ -26,4 +26,5 @@ body {
   color: var(--foreground);
   /* background: var(--background); */
   font-family: "Be Vietnam Pro", Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
