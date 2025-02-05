@@ -25,7 +25,7 @@ export const Navbar: React.FC = ({...props}) => {
     const menuIconRef = useRef<HTMLButtonElement>(null)
 
     const toggleMenu = () => {
-        let menu = menuRef.current
+        const menu = menuRef.current
         if (menu) {
             menu.classList.toggle('open')
             menuIconRef.current?.classList.toggle('open')
