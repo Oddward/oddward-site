@@ -140,9 +140,9 @@ export const Navbar: React.FC = ({...props}) => {
                     <Heading as={'h3'} fontSize={'xl'} color={'fg.muted'}>Get in Touch</Heading>
                     <Fieldset.Content>
                         <Text color={'fg.muted'}>
-                            I am <Input type="text" variant={'flushed'} w={'full'} required />,
-                            you can email me at <Input type="text" variant={'flushed'} w={'full'} required />
-                            and this is my message: <Textarea variant={'outline'} w={'full'} required />
+                            I am <Input type="text" name="name" variant={'flushed'} w={'full'} required />,
+                            you can email me at <Input type="text" name="email" variant={'flushed'} w={'full'} required />
+                            and this is my message: <Textarea name="message" variant={'outline'} w={'full'} required />
                         </Text>
                     </Fieldset.Content>
                     <Button 
