@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
-import { Container, Flex } from "@chakra-ui/react";
+import { Container, Box, Flex } from "@chakra-ui/react";
 import { Provider } from "@/components/ui/provider";
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -37,9 +37,9 @@ export default function RootLayout({
         className={`${beVietnamPro.variable} ${geistMono.variable} antialiased`}
       >
         <Provider>
-          <div className="w-full p-2 bg-black text-white text-center">
+          <Box textAlign={'center'} color={'fg'} bg={'black'} p={2}>
             website under construction
-          </div>
+          </Box>
           <Container marginInline={'auto'} maxW="breakpoint-lg" p={4} spaceY={8}>
             {children}
             <Flex as={'footer'} color={'fg.muted'} justifyContent={'between'} py={'3rem 1.5rem'} mt={16}>

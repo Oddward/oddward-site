@@ -83,7 +83,7 @@ const cardSlotRecipe = defineSlotRecipe({
             root: {
               bg: 'transparent',
               borderColor: 'border',
-              borderRadius: 'xl'
+              borderRadius: 'md'
             }
         },
         subtle: {
@@ -109,7 +109,7 @@ const cardSlotRecipe = defineSlotRecipe({
     },
 })
 
-const config = defineConfig({
+const customConfig = defineConfig({
 theme: {
     tokens: {
         gradients: {
@@ -118,9 +118,6 @@ theme: {
         },
         colors: {
             dribbble: { value: "#ea4c89" },
-            brand: {
-            bg: { value: '0f172a' },
-            }
         }
     },
     semanticTokens: {
@@ -131,10 +128,13 @@ theme: {
             l1: { value: colors.slate[700] },
             },
             border: { value: colors.slate[700] },
+            brand: {
+                bg: { value: '#0f172a' },
+            }
         }
     },
     slotRecipes: {
-    card: cardSlotRecipe
+        card: cardSlotRecipe
     }
 },
 globalCss: {
@@ -148,6 +148,6 @@ globalCss: {
 }
 })
   
-const designSystem = createSystem(defaultConfig, config)
+const designSystem = createSystem(defaultConfig, customConfig)
 
 export default designSystem

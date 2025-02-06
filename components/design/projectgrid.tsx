@@ -1,5 +1,5 @@
 'use client'
-import { SimpleGrid, Heading, Text, Box, Link } from '@chakra-ui/react'
+import { SimpleGrid, type SimpleGridProps, Heading, Text, Box, Link } from '@chakra-ui/react'
 import { RiArrowRightLine, RiExternalLinkLine } from 'react-icons/ri'
 
 const projectGridStyle = {
@@ -25,12 +25,12 @@ const simpleGridStyle = {
     }
 }
 
-interface ProjectGridProps {
+interface ProjectGridProps extends SimpleGridProps {
     title: string,
     description?: string,
     link?: string,
     children: React.ReactNode[],
-    [key: string]: any
+    // [key: string]: any
 }
 
 export const ProjectGrid = ({ 

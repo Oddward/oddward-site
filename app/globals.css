@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @font-feature-values "Be Vietnam Pro" {
-  @styleset {
-
-  }
-} */
-
-
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -27,4 +19,7 @@ body {
   /* background: var(--background); */
   font-family: "Be Vietnam Pro", Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Be Vietnam Pro", Arial, Helvetica, sans-serif;
 }
