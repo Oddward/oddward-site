@@ -5,7 +5,7 @@ import ProfileImage from "@/components/design/profileimage";
 import { Box, Card, Grid, GridItem, Heading, Highlight, Icon, Image, Link, LinkOverlay, List, SimpleGrid, Text } from "@chakra-ui/react";
 import { DiCss3, DiFirebase, DiHtml5, DiReact, } from "react-icons/di";
 import { LuFigma } from "react-icons/lu";
-import { RiArrowRightLine, RiExternalLinkLine, RiNextjsFill, RiQuillPenFill, RiTeamLine, RiVuejsFill } from "react-icons/ri";
+import { RiArrowRightLine, RiDribbbleLine, RiExternalLinkLine, RiGithubLine, RiInstagramLine, RiNextjsFill, RiQuillPenFill, RiTeamLine, RiVuejsFill } from "react-icons/ri";
 import { SiAffinity, SiBlender } from "react-icons/si";
 import { DividerHeading } from "@/components/design/dividerheading";
 import ProjectCard from "@/components/design/projectcard";
@@ -138,48 +138,66 @@ export default function Home() {
       </Grid>
 
       <DividerHeading title="Stuff" />
-      <Grid gridTemplateAreas={{
-        base: `"dribbble dribbble"
-              "github insta"
-              "insta2 other"`,
-        md:`"dribbble github insta"
-            "dribbble insta2 other"`
-      }} gap={4}>
+      <Box 
+      // gridTemplateAreas={{
+      //   base: `"dribbble""insta2""insta""github"`,
+      //   sm: `"dribbble dribbble"
+      //         "insta2 insta"
+      //         "github other"`,
+      //   md:`"dribbble insta2 insta"
+      //       "dribbble github other"`
+      // }} 
+      // templateColumns={{base:1, sm:2, md:3}}
+      columnCount={{base:1, sm:2, md:3}}
+      gap={4}
+      >
         <BentoCard 
           title="Dribbble" 
-          subtitle="design portfolio @oddward" 
+          subtitle="Design portfolio" 
           href="https://dribbble.com/oddward"
-          gridArea="dribbble"
-          bgColor="dribbble" />
+          // gridArea="dribbble"
+          imgSrc="/img/project-socialapp.jpg"
+          brandColor="dribbble" 
+          coverIcon={<RiDribbbleLine />}
+          />
 
         <BentoCard 
           title="GitHub" 
           subtitle="Dev projects" 
           href="https://github.com/Oddward"
-          gridArea="github"
-          bgColor="black" />
+          // gridArea="github"
+          brandColor="black" 
+          coverIcon={<RiGithubLine />}
+          />
 
         <BentoCard 
           title="Instagram" 
           subtitle="Introspective content creation" 
           bgImage="/association_thumb.jpg" 
           href="https://instagram.com/mugtaba.g"
-          gridArea="insta"
-          bgGradient="instagram" />
+          // gridArea="insta"
+          brandColor="instagram"
+          imgSrc="/img/association_thumb.jpg" 
+          coverIcon={<RiInstagramLine />}
+          />
 
         <BentoCard 
           title="Instagram alt" 
           subtitle="Dev notes" 
           href="https://instagram.com/oddward.io"
-          gridArea="insta2" 
-          bgGradient="instagram" />
+          // gridArea="insta2" 
+          brandColor="instagram"
+          imgSrc="/img/cssrelative_thumb.jpg" 
+          coverIcon={<RiInstagramLine />}
+          />
 
         {/* <BentoCard 
           title="TBD..." 
           subtitle="" 
           href="#" 
-          gridArea="other" /> */}
-      </Grid>
+          gridArea="other" 
+          /> */}
+      </Box>
 
       <DividerHeading title="Projects" />
 

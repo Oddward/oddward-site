@@ -1,5 +1,5 @@
 'use client'
-import { Box, Fieldset, Flex, Heading, HStack, Icon, Input, Link, List, Span, Text, Textarea, VStack } from "@chakra-ui/react"
+import { Fieldset, Flex, Heading, HStack, Icon, Input, Link, List, Span, Text, Textarea, VStack } from "@chakra-ui/react"
 import Logo from "./logo"
 import { startTransition, useEffect, useRef, useState } from "react"
 import { Button } from "../ui/button"
@@ -89,8 +89,8 @@ export const Navbar: React.FC = ({...props}) => {
             top={{md:0}} bottom={{mdDown:0}}
             zIndex={100}
             bg={'brand.bg'} 
-            borderTop={{mdDown:'solid .5px var(--chakra-colors-bg-subtle)'}}
-            borderBottom={{md:'solid .5px var(--chakra-colors-bg-subtle)'}}
+            borderTop={{mdDown:'solid 1px var(--chakra-colors-bg-subtle)'}}
+            borderBottom={{md:'solid 1px var(--chakra-colors-bg-subtle)'}}
             {...props}
             >
             <HStack justifyContent={'space-between'}>

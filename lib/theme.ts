@@ -131,7 +131,10 @@ theme: {
             brand: {
                 bg: { value: '#0f172a' },
             }
-        }
+        },
+        easings: {
+            slick: { value: "cubic-bezier(0.7, 0, 0.3, 1)" }
+        },
     },
     slotRecipes: {
         card: cardSlotRecipe
