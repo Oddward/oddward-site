@@ -1,60 +1,51 @@
 'use client'
 import { Fieldset, Flex, Heading, HStack, Icon, Input, Link, List, Span, Text, Textarea, VStack } from "@chakra-ui/react"
 import Logo from "./logo"
-import { startTransition, useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Button } from "../ui/button"
-import { RiHome3Line, RiMessage3Line } from "react-icons/ri"
+import { RiBlueskyLine, RiHome3Line, RiInstagramLine, RiLinkedinLine, RiMessage3Line, RiTwitterLine } from "react-icons/ri"
 import { IoMdPerson } from "react-icons/io"
+import { Field } from "../ui/field"
 
 const pages = [
     { name: 'home', href: '/', icon: <RiHome3Line /> },
     { name: 'about', href: '/about', icon: <IoMdPerson /> },
 ]
 
-const contactStyle = {
-    'height': '0',
-    'overflow': 'hidden',
-    'transition': 'height .3s',
-    'transitionTimingFunction': 'cubic-bezier(0.7, 0, 0.3, 1)',
-    '&.open': {
-        'height': '100%',
-    }
-}
-
-const contactBtnStyle = {
-    'transition': 'height .3s',
-    'transitionTimingFunction': 'cubic-bezier(0.7, 0, 0.3, 1)',
-    '&.open': {
-        'fill': 'var(--chakra-colors-solid)',
-    }
-}
+const socials = [
+    { name: 'instagram', href: 'https://instagram.com/mugtaba.g', icon: <RiInstagramLine /> },
+    { name: 'bluesky', href: 'https://bsky.app/profile/oddwardio.bsky.social', icon: <RiBlueskyLine /> },
+    { name: 'twitter', href: 'https://x.com/oddward_io', icon: <RiTwitterLine /> },
+    { name: 'linkedin', href: 'https://linkedin.com/in/mugtabagaroot', icon: <RiLinkedinLine /> },
+]
 
 export const Navbar: React.FC = ({...props}) => {
     const contactRef = useRef<HTMLDivElement>(null)
-    // const contactBtnRef = useRef<HTMLButtonElement>(null)
     const [isContactOpen, setIsContactOpen] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
-    // const [isPending, startTransition] = useTransition()
     const [height, setHeight] = useState<string>('0')
-    // const [status, setStatus] = useState('idle')
+    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
     useEffect(() => {
-        if (contactRef.current) {
-            const scrollHeight = contactRef.current.scrollHeight
-            setHeight(`${scrollHeight}px`)
-        }
+        updateHeight()
     }, [])
 
     const toggleContact = () => {
-            startTransition(() => {
-                setIsContactOpen(!isContactOpen)
-            })
+            setIsContactOpen(!isContactOpen)
+            updateHeight()
+    }
+
+    const updateHeight = () => {
+        if (contactRef.current) {
+            const scrollHeight = contactRef.current.scrollHeight;
+            setHeight(`${scrollHeight}px`);
+        }
     }
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsLoading(true);
-        // setStatus('idle');
+        setStatus('idle');
 
         const form = e.currentTarget;
         const formData = new FormData( form );
@@ -73,10 +64,10 @@ export const Navbar: React.FC = ({...props}) => {
                 body: JSON.stringify(data),
             });
             if (!response.ok) throw new Error('Failed to send message');
-            // setStatus('success');
+            setStatus('success');
             form.reset();
         } catch (error) {
-            // setStatus('error');
+            setStatus('error');
             // alert('Failed to send message. Please try again.');
             console.error('Submission error:', error)
         }
@@ -86,11 +77,11 @@ export const Navbar: React.FC = ({...props}) => {
         <Flex as={'nav'} 
             flexDir={{base:'column-reverse', md:'column'}}
             position={{base:'fixed', md:'sticky'}} p={4} 
-            top={{md:0}} bottom={{mdDown:0}}
+            top={{md:0}} bottom={{mdDown:0}} left={0} right={0}
             zIndex={100}
             bg={'brand.bg'} 
-            borderTop={{mdDown:'solid 1px var(--chakra-colors-bg-subtle)'}}
-            borderBottom={{md:'solid 1px var(--chakra-colors-bg-subtle)'}}
+            borderTop={{mdDown:'solid 2px var(--chakra-colors-bg-subtle)'}}
+            borderBottom={{md:'solid 2px var(--chakra-colors-bg-subtle)'}}
             {...props}
             >
             <HStack justifyContent={'space-between'}>
@@ -113,7 +104,6 @@ export const Navbar: React.FC = ({...props}) => {
                             borderRadius={'sm'}
                             p={2}
                             _hover={{color:'fg'}}
-                            css={contactBtnStyle}
                             >
                                 <Icon display={{md:'none'}} size={'lg'}>{ page.icon }</Icon>
                                 <Span display={{mdDown:'none'}}>{page.name}</Span>
@@ -122,38 +112,82 @@ export const Navbar: React.FC = ({...props}) => {
                     ))}
                     <List.Item>
                         <Button variant={'ghost'} 
-                        color={'fg.muted'} fill={isContactOpen ? 'solid':'fg.muted'}
-                        onClick={toggleContact}>
+                        color={'fg.muted'} fill={isContactOpen ? 'colorPalette.solid':'fg.muted'}
+                        onClick={ toggleContact }>
                             <Span>Contact</Span>
-                            <Icon size={'lg'}><RiMessage3Line /></Icon>
+                            <Icon fontSize={'lg'} size={'lg'}><RiMessage3Line /></Icon>
                         </Button>
                     </List.Item>
                 </List.Root>
             </HStack>
             
-            <VStack gap={4} 
+            <VStack 
+            gap={4} 
             h={isContactOpen ? height:'0'} 
-            css={contactStyle}
+            transition={'height .25s'}
+            transitionTimingFunction={'slick'}
+            overflow={'hidden'}
             ref={contactRef}
+            aria-label="Contact Form"
             >
-                <Fieldset.Root fontSize="xl" maxW="lg" p={4}>
-                    <Heading as={'h3'} fontSize={'xl'} color={'fg.muted'}>Get in Touch</Heading>
-                    <Fieldset.Content>
-                        <Text color={'fg.muted'}>
-                            I am <Input type="text" name="name" variant={'flushed'} w={'full'} required />,
-                            you can email me at <Input type="text" name="email" variant={'flushed'} w={'full'} required />
-                            and this is my message: <Textarea name="message" variant={'outline'} w={'full'} required />
-                        </Text>
-                    </Fieldset.Content>
-                    <Button 
-                        variant={'solid'}
-                        type="submit" w="full"
-                        // _loading={isLoading}
-                        onClick={ () => handleSubmit }
-                        disabled={isLoading}>
-                        Send Message
-                    </Button>
-                </Fieldset.Root>
+                <form onSubmit={handleSubmit} className="w-full">
+                    <Fieldset.Root position={'relative'} fontSize="xl" maxW="lg" p={4} mx={'auto'}>
+                        <Heading as={'h3'} fontSize={'xl'} color={'fg.muted'}>Get in Touch</Heading>
+                        <HStack>
+                            {socials.map((social) => (
+                                <Link href={social.href} 
+                                variant={'plain'}
+                                fontSize={'xl'}
+                                border="solid 1px"
+                                borderColor={'fg.muted'}
+                                borderRadius={'full'} 
+                                color={'fg.muted'}
+                                bg={'fg/5'}
+                                p={4} 
+                                rounded="full"
+                                _hover={{color:'colorPalette.solid'}}
+                                >
+                                    {social.icon}
+                                </Link>
+                            ))}
+                        </HStack>
+                        <Fieldset.Content color={'fg.muted'}>
+                            {/* <Text color={'fg.muted'}> */}
+                            <Field>
+                                I am 
+                                <Input type="text" name="name" variant={'flushed'} placeholder="Jane Doe" w={'full'} required />
+                            </Field>
+                            <Field>
+                                you can email me at 
+                                <Input type="email" name="email" variant={'flushed'} placeholder="jane@mail.com" w={'full'} required />
+                            </Field>
+                            <Field>
+                                and this is my message: 
+                                <Textarea name="message" variant={'outline'} resize={'vertical'} w={'full'} required
+                                onChange={() => updateHeight()} 
+                                />
+                            </Field>
+                            {/* </Text> */}
+                        </Fieldset.Content>
+                        <Fieldset.HelperText fontSize={'sm'} h={4}>
+                            {status === 'success' && (
+                                <Text color="green.500">Message sent successfully!</Text>
+                            )}
+                            {status === 'error' && (
+                                <Text color="red.500">Failed to send message. Please try again.</Text>
+                            )}
+                        </Fieldset.HelperText>
+                        <Button 
+                            variant={'solid'}
+                            type="submit" w="full"
+                            onClick={ () => handleSubmit }
+                            disabled={isLoading}
+                            mt={4}
+                            >
+                            Send Message
+                        </Button>
+                    </Fieldset.Root>
+                </form>
             </VStack>
         </Flex>
     )

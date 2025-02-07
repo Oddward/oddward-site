@@ -42,7 +42,11 @@ export default function RootLayout({
           </Box>
           <Container marginInline={'auto'} maxW="breakpoint-lg" p={4} spaceY={8}>
             {children}
-            <Flex as={'footer'} color={'fg.muted'} justifyContent={'between'} py={'3rem 1.5rem'} mt={16}>
+            <Flex as={'footer'} 
+            color={'fg.muted'} 
+            justifyContent={'between'} 
+            py={{base:10, md:'3rem 1.5rem'}} 
+            mt={16}>
                 {`@${new Date().getFullYear()} Mugtaba G // oddward`}
             </Flex>
           </Container>

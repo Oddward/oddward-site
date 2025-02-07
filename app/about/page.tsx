@@ -5,7 +5,7 @@ import { FramedIcon } from "@/components/design/framedicon";
 import { Navbar } from "@/components/design/navbar";
 import { Box, Card, Flex, Grid, HStack, Image, Link, Text } from "@chakra-ui/react";
 import { DiCss3, DiFirebase, DiHtml5, DiReact, } from "react-icons/di";
-import { SiAffinity, SiBlender, SiFigma } from "react-icons/si";
+import { SiAffinity, SiBlender, SiFigma, SiRive } from "react-icons/si";
 import { RiNextjsFill, RiVuejsFill } from "react-icons/ri";
 import { socials } from "@/lib/profile";
 
@@ -15,7 +15,7 @@ export default function About() {
       <>
         <Navbar />
 
-        <Box as={'section'} py={16} px={4}>
+        <Box as={'section'} pb={16} pt={10} px={4}>
             <Card.Root variant={'outline'} bgColor={'transparent'}>
                 <Card.Body>
                     <Grid templateColumns={{md:'1fr 2fr'}} templateAreas={{
@@ -86,6 +86,7 @@ export default function About() {
             <FramedIcon><DiCss3 /></FramedIcon>
             <FramedIcon><SiFigma /></FramedIcon>
             <FramedIcon><SiAffinity /></FramedIcon>
+            <FramedIcon><SiRive /></FramedIcon>
             <FramedIcon><SiBlender /></FramedIcon>
         </Grid>
       </>
