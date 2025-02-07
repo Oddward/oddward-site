@@ -134,8 +134,9 @@ export const Navbar: React.FC = ({...props}) => {
                     <Fieldset.Root position={'relative'} fontSize="xl" maxW="lg" p={4} mx={'auto'}>
                         <Heading as={'h3'} fontSize={'xl'} color={'fg.muted'}>Get in Touch</Heading>
                         <HStack>
-                            {socials.map((social) => (
-                                <Link href={social.href} 
+                            {socials.map((social, index) => (
+                                <Link key={index}
+                                href={social.href} 
                                 variant={'plain'}
                                 fontSize={'xl'}
                                 border="solid 1px"
