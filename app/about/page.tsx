@@ -31,11 +31,11 @@ export default function About() {
                             <Text as="span" fontSize="md" color="fg.muted">Developer // Designer // Digital content creator</Text>
                         </Box>
                         <Flex flexDir={'column'} gap={4} gridArea={'desc'}>
-                            <Text mt={4}>Computer science graduate who’s passionate about all things art. Mostly self-taught with some experience in web development, website management, graphic design and social media management, and a lot of self-learning.</Text>
-                            <Text mt={4}>Usually found consuming tonnes of media (especially animation), practicing web development and graphic design, gaming, and/or hanging out on a discord chat.</Text>
+                            <Text mt={4}>Computer science graduate who’s passionate about all things art. Mostly self-taught with experience in web development, website management, graphic design and social media management, and a lot of self-learning and trying things out.</Text>
+                            <Text mt={4}>Usually found consuming tonnes of media (especially animation), practicing the craft, gaming, and/or hanging out on a discord chat.</Text>
                             <HStack gap={4}>
                                 {socials.map((social, i) => (
-                                    <Link key={i} href={social.href} fontSize="md" color="fg.muted" _hover={{color:"colorPalette.solid"}}>{social.icon}</Link>
+                                    <Link key={i} href={social.href} fontSize="lg" color="fg.muted" _hover={{color:"colorPalette.solid"}}>{social.icon}</Link>
                                 ))}
                             </HStack>
                         </Flex>
@@ -54,9 +54,9 @@ export default function About() {
         <Card.Root variant={'outline'} bgColor={'unset'}>
             <Card.Body>
                 <Flex flexDir={'column'} gap={2}>
-                    <Text>Solid fundamentals in HTML5, CSS3, and some JS and TypeScript, with a focus on frontend design & development.</Text>
+                    <Text>Solid experience with HTML5, CSS3, some JS and TypeScript. Focused on frontend design & development with competence in the full stack.</Text>
                     <Text>Main stack currently: Nextjs + TailwindCSS/Chakra UI + Nodejs + Firebase</Text>
-                    <Text>Currently working on a couple of personal and team-based projects to improve my skills and build a product. Exploring cross-platform development with React Native and Expo, and some backend SaaS. I also try to utilize Figma and similar tools for drafts and prototyping.</Text>
+                    <Text>Currently working on a couple of personal and team-based projects to improve my skills and build a product. Exploring cross-platform development with React Native/Expo, and some backend SaaS. I also try to utilize Figma and similar tools for drafts, design and prototyping.</Text>
                 </Flex>
             </Card.Body>
         </Card.Root>

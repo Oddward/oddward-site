@@ -66,9 +66,11 @@ export const Navbar: React.FC = ({...props}) => {
             if (!response.ok) throw new Error('Failed to send message');
             setStatus('success');
             form.reset();
+            setIsLoading(false);
         } catch (error) {
             setStatus('error');
             // alert('Failed to send message. Please try again.');
+            setIsLoading(false);
             console.error('Submission error:', error)
         }
     };
@@ -183,6 +185,7 @@ export const Navbar: React.FC = ({...props}) => {
                             type="submit" w="full"
                             onClick={ () => handleSubmit }
                             disabled={isLoading}
+                            loading={isLoading}
                             mt={4}
                             >
                             Send Message

@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Oddward space // Digital creative",
-  description: "A digital creative space for Mugtaba G, a.k.a. Oddward. Find design projects, dev projects, writing and more.",
+  title: "Oddward digital creative space",
+  description: "Find design projects, dev projects, profiles, writing and more by Mugtaba G, a.k.a. Oddward.",
   keywords: ["design", "development", "writing", "portfolio", "mugtaba", "oddward", "garoot", "oddward space", "oddward g", "mugtaba g", "web design", "web development", "sudanese developer", "sudanese designer"],
 };
 
