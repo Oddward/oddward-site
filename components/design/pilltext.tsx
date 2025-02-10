@@ -1,7 +1,6 @@
 'use client'
 import { Flex, Text } from '@chakra-ui/react'
 import { ReactNode } from 'react'
-import { useColorModeValue } from '../ui/color-mode'
 
 interface PillTextProps {
     text: string
@@ -16,7 +15,6 @@ export const PillText: React.FC<PillTextProps> = ({
     bg,
     ...props 
 }) => {
-    const bgColors = useColorModeValue("gray.100", "gray.800")
 
     return (
         <Flex
@@ -26,7 +24,8 @@ export const PillText: React.FC<PillTextProps> = ({
             px={4}
             py={2}
             borderRadius="full"
-            bg={bg ? bg : bgColors}
+            bg={bg ? bg : "bg.subtle"}
+            color={"fg.muted"}
             {...props}
         >
             <Text fontSize="md" fontWeight="medium">{text}</Text>

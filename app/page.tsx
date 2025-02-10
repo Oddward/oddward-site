@@ -6,7 +6,7 @@ import { Box, Card, Grid, GridItem, Heading, Highlight, Icon, Image, Link, LinkO
 import { DiCss3, DiFirebase, DiHtml5, DiReact, } from "react-icons/di";
 import { LuFigma } from "react-icons/lu";
 import { RiArrowRightLine, RiDribbbleLine, RiExternalLinkLine, RiGithubLine, RiInstagramLine, RiNextjsFill, RiQuillPenFill, RiTeamLine, RiVuejsFill } from "react-icons/ri";
-import { SiAffinity, SiBlender } from "react-icons/si";
+import { SiAdobe, SiAffinity, SiBlender } from "react-icons/si";
 import { DividerHeading } from "@/components/design/dividerheading";
 import ProjectCard from "@/components/design/projectcard";
 import { BentoCard } from "@/components/design/bentocard";
@@ -41,15 +41,16 @@ export default function Home() {
             </Highlight>
           </Text>
           <Grid templateColumns={'repeat(auto-fit, minmax(4rem, 1fr))'} autoColumns={''} gap={6} w="90%" gridArea={'icons'}>
-            <FramedIcon><DiHtml5 /></FramedIcon>
-            <FramedIcon><DiCss3 /></FramedIcon>
-            <FramedIcon><DiReact /></FramedIcon>
-            <FramedIcon><RiNextjsFill /></FramedIcon>
-            <FramedIcon><RiVuejsFill /></FramedIcon>
-            <FramedIcon><DiFirebase /></FramedIcon>
-            <FramedIcon><LuFigma /></FramedIcon>
-            <FramedIcon><SiAffinity /></FramedIcon>
-            <FramedIcon><SiBlender /></FramedIcon>
+            <FramedIcon label="HTML5"><DiHtml5 /></FramedIcon>
+            <FramedIcon label="CSS3"><DiCss3 /></FramedIcon>
+            <FramedIcon label="React"><DiReact /></FramedIcon>
+            <FramedIcon label="Nextjs"><RiNextjsFill /></FramedIcon>
+            <FramedIcon label="Vue"><RiVuejsFill /></FramedIcon>
+            <FramedIcon label="Firebase"><DiFirebase /></FramedIcon>
+            <FramedIcon label="Figma"><LuFigma /></FramedIcon>
+            <FramedIcon label="Affinity suite"><SiAffinity /></FramedIcon>
+            <FramedIcon label="Adobe"><SiAdobe /></FramedIcon>
+            <FramedIcon label="Blender"><SiBlender /></FramedIcon>
           </Grid>
         {/* </VStack> */}
       </Grid>
@@ -128,7 +129,7 @@ export default function Home() {
               borderRadius={'md'} 
               />
             </Card.Header>
-            <Card.Body _groupHover={{color:'colorPalette.solid'}}>
+            <Card.Body _groupHover={{color:'colorPalette.fg'}}>
               <Heading as={'h3'} fontSize={'lg'} fontWeight={'bold'}>Digital Garden <Icon><RiQuillPenFill /></Icon></Heading>
               <Text fontSize={'md'} color={'fg.subtle'}>A public knowledge base of notes, thoughts, and ideas (wip).</Text>
             </Card.Body>
@@ -224,7 +225,7 @@ export default function Home() {
 
         <SimpleGrid columns={{base:1, md:2}} gap={4}>
           <ProjectCard href="https://github.com/Oddward/project-music-e" title="React music app (on hold)" src="/img/project-music.jpg" />
-          <ProjectCard href="https://github.com/Oddward/nl-setups" title="Launcher setups platform (on hold)" src="/img/NLSetups - User Profile ss.png" />
+          <ProjectCard href="https://github.com/Oddward/nlsetups" title="Launcher setups platform (on hold)" src="/img/NLSetups - User Profile ss.png" />
         </SimpleGrid>
       </Box>
     </>

@@ -1,6 +1,5 @@
 'use client'
-import { Card, Span } from "@chakra-ui/react"
-import { useColorModeValue } from "../ui/color-mode"
+import { Box, Card, Span } from "@chakra-ui/react"
 
 interface FramedIconProps {
     children: React.ReactNode
@@ -9,22 +8,37 @@ interface FramedIconProps {
 
 export const FramedIcon: React.FC<FramedIconProps> = ({ children, label }) => {
     return (
-        <Card.Root variant={'outline'} fontSize={'4xl'} 
-        borderRadius="2xl" border="solid .5px" borderColor="fg.subtle" 
-        bg={useColorModeValue("gray.100", "gray.800")} color={useColorModeValue("gray.500", "gray.400")} 
+        <Card.Root variant={'outline'} 
+        position={'relative'}
+        fontSize={'4xl'} 
+        borderRadius="2xl"
+        bg={"bg.subtle"} color={"fg.muted"} 
         flexGrow={0} justifyContent="center" alignItems="center" 
         w="full" h="auto" aspectRatio={'1/1'} 
         p={6} boxSizing="border-box"
         transition={'all .25s'}
         transitionTimingFunction={'slick'}
         className="group">
-            {children}
+            <Box
+            transition={'all .2s'}
+            transitionTimingFunction={'slick'}
+            transform={'translateY(0)'}
+            _groupHover={label ? {transform:'translateY(-.5rem)'} : {transform:'translateY(0)'}}
+            >
+                {children}
+            </Box>
             {label && 
                 <Span 
-                fontSize={'sm'} 
+                position={'absolute'}
+                bottom={2} left={1} right={1}
+                textAlign={'center'}
+                fontSize={'x-small'} 
+                lineHeight={'shorter'}
+                transition={'all .2s'}
+                transitionTimingFunction={'slick'}
                 opacity={0} 
                 translateY={'0'}
-                _groupHover={{opacity:1, translateY:'-1rem'}}>
+                _groupHover={{opacity:1}}>
                     {label}
                 </Span>
             }

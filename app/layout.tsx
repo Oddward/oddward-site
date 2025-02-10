@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Be_Vietnam_Pro } from "next/font/google";
+import { 
+  Geist_Mono, 
+  Be_Vietnam_Pro, 
+  // Plus_Jakarta_Sans 
+} from "next/font/google";
 import "./globals.css";
 import { Container, Box, Flex } from "@chakra-ui/react";
 import { Provider } from "@/components/ui/provider";
@@ -9,6 +13,12 @@ const beVietnamPro = Be_Vietnam_Pro({
   weight: ["200", "500", "700", "900"],
   subsets: ["latin"],
 })
+
+// const plusJakartaSans = Plus_Jakarta_Sans({
+//   variable: "--font-plus-jakarta-sans",
+//   weight: ["200", "500", "700", "800"],
+//   subsets: ["latin"],
+// })
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -36,8 +46,8 @@ export default function RootLayout({
       <body
         className={`${beVietnamPro.variable} ${geistMono.variable} antialiased`}
       >
-        <Provider>
-          <Box textAlign={'center'} color={'fg'} bg={'black'} p={2}>
+        <Provider forcedTheme="dark">
+          <Box textAlign={'center'} color={'white'} bg={'black'} p={2}>
             website under construction
           </Box>
           <Container marginInline={'auto'} maxW="breakpoint-lg" p={4} spaceY={8}>
@@ -47,7 +57,7 @@ export default function RootLayout({
             justifyContent={'between'} 
             py={{base:10, md:'3rem 1.5rem'}} 
             mt={16}>
-                {`@${new Date().getFullYear()} Mugtaba G // oddward`}
+                {`@${new Date().getFullYear()} Mugtaba G // Oddward`}
             </Flex>
           </Container>
         </Provider>

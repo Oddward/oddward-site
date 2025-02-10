@@ -65,6 +65,7 @@ export const BentoCard: React.FC<BentoCardProps> = ({
                 >
                     {title} <Icon 
                         position={'absolute'}
+                        color={'white'}
                         opacity={0} 
                         marginInlineStart={2} 
                         translate={'-.5em .5em'}

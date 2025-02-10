@@ -5,7 +5,7 @@ import { FramedIcon } from "@/components/design/framedicon";
 import { Navbar } from "@/components/design/navbar";
 import { Box, Card, Flex, Grid, HStack, Image, Link, Text } from "@chakra-ui/react";
 import { DiCss3, DiFirebase, DiHtml5, DiReact, } from "react-icons/di";
-import { SiAffinity, SiBlender, SiFigma, SiRive } from "react-icons/si";
+import { SiAdobe, SiAffinity, SiBlender, SiDavinciresolve, SiFigma, SiRive } from "react-icons/si";
 import { RiNextjsFill, RiVuejsFill } from "react-icons/ri";
 import { socials } from "@/lib/profile";
 
@@ -62,12 +62,12 @@ export default function About() {
         </Card.Root>
 
         <Grid templateColumns={'repeat(auto-fit, minmax(6rem,6rem))'} justifyItems={'center'} gap={6} w="100%">
-            <FramedIcon><DiHtml5 /></FramedIcon>
-            <FramedIcon><DiCss3 /></FramedIcon>
-            <FramedIcon><DiReact /></FramedIcon>
-            <FramedIcon><RiNextjsFill /></FramedIcon>
-            <FramedIcon><RiVuejsFill /></FramedIcon>
-            <FramedIcon><DiFirebase /></FramedIcon>
+            <FramedIcon label="HTML5"><DiHtml5 /></FramedIcon>
+            <FramedIcon label="CSS3"><DiCss3 /></FramedIcon>
+            <FramedIcon label="React"><DiReact /></FramedIcon>
+            <FramedIcon label="Nextjs"><RiNextjsFill /></FramedIcon>
+            <FramedIcon label="Vue"><RiVuejsFill /></FramedIcon>
+            <FramedIcon label="Firebase"><DiFirebase /></FramedIcon>
         </Grid>
         
         <DividerHeading title="Design" />
@@ -82,12 +82,14 @@ export default function About() {
         </Card.Root>
 
         <Grid templateColumns={'repeat(auto-fit, minmax(6rem,6rem))'} justifyItems={'center'} gap={6} w="100%">
-            <FramedIcon><DiHtml5 /></FramedIcon>
-            <FramedIcon><DiCss3 /></FramedIcon>
-            <FramedIcon><SiFigma /></FramedIcon>
-            <FramedIcon><SiAffinity /></FramedIcon>
-            <FramedIcon><SiRive /></FramedIcon>
-            <FramedIcon><SiBlender /></FramedIcon>
+            <FramedIcon label="HTML5"><DiHtml5 /></FramedIcon>
+            <FramedIcon label="CSS3"><DiCss3 /></FramedIcon>
+            <FramedIcon label="Figma"><SiFigma /></FramedIcon>
+            <FramedIcon label="Affinity suite"><SiAffinity /></FramedIcon>
+            <FramedIcon label="Adobe suite"><SiAdobe /></FramedIcon>
+            <FramedIcon label="Rive"><SiRive /></FramedIcon>
+            <FramedIcon label="Blender"><SiBlender /></FramedIcon>
+            <FramedIcon label="Davinci Resolve"><SiDavinciresolve /></FramedIcon>
         </Grid>
       </>
     )

@@ -123,13 +123,20 @@ theme: {
     semanticTokens: {
         colors: {
             bg: {
-            base: { value: colors.slate[500] },
-            subtle: { value: colors.slate[800] },
-            l1: { value: colors.slate[700] },
+              DEFAULT: { value: "brand.bg" },
+              base: { value: colors.slate[500] },
+              subtle: { value: colors.slate[800] },
+              l1: { value: colors.slate[700] },
             },
-            border: { value: colors.slate[700] },
+            border: { value: {
+              _light: "gray",
+              _dark: "#334155"
+            } },
             brand: {
-                bg: { value: '#0f172a' },
+                bg: { value: {
+                  _light: "lightyellow",
+                  _dark: "#0f172a"
+                }},
             }
         },
         easings: {
@@ -142,11 +149,13 @@ theme: {
 },
 globalCss: {
     "html": {
-    colorPalette: "yellow"
+      colorPalette: "orange",
+      // colorScheme: "dark",
     },
     "body": {
-    bg: colors.slate[900]
-    // bg: {_dark: {"blue.950"}, _light: "yellow.100"}
+      // bg: colors.slate[900],
+      background: "brand.bg",
+      // colorScheme: "dark"
     }
 }
 })
