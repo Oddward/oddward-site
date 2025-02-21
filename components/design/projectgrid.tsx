@@ -4,11 +4,14 @@ import { RiArrowRightLine, RiExternalLinkLine } from 'react-icons/ri'
 
 const projectGridStyle = {
     'borderRadius': '0.5rem',
-    'border': '1px solid var(--chakra-colors-border)',
     'padding': '1rem',
     'marginBlock': '1.5rem 3rem',
+    'border': '1px solid transparent',
+    // 'boxSizing': 'bounding-box',
+    'transition': 'border-color 0.2s ease',
     '&:hover': {
-        'background': 'rgb(255 255 255 / 5%)',
+        // 'background': 'rgb(255 255 255 / 5%)',
+        'borderColor': 'var(--chakra-colors-border)',
     },
     '& img': {
         'width': '100%',

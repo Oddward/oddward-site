@@ -55,8 +55,7 @@ export default function RootLayout({
             <Flex as={'footer'} 
             color={'fg.muted'} 
             justifyContent={'between'} 
-            pt={{base:10, md:'3rem 1.5rem'}} 
-            pb={{base:20, md:'3rem 1.5rem'}} 
+            py={{base:'3rem 5rem', md:'3rem 1.5rem'}}
             mt={16}>
                 {`@${new Date().getFullYear()} Mugtaba G // Oddward`}
             </Flex>
