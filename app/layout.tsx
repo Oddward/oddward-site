@@ -34,6 +34,28 @@ export const metadata: Metadata = {
   title: "Oddward digital creative space",
   description: "Find design projects, dev projects, profiles, writing and more by Mugtaba G, a.k.a. Oddward.",
   keywords: ["design", "development", "writing", "portfolio", "mugtaba", "oddward", "garoot", "oddward space", "oddward g", "mugtaba g", "web design", "web development", "sudanese developer", "sudanese designer"],
+  openGraph: {
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Dark blue image with white text that reads 'Mugtaba Garoot. Web. Dev. Design.' and a white logo in the bottom right corner.",
+      },
+      {
+        url: "/twitter-image.png",
+        width: 1200,
+        height: 675,
+        alt: "Dark blue image with white text that reads 'Mugtaba Garoot. Web. Dev. Design.' and a white logo in the bottom right corner.",
+      },
+      {
+        url: "/whatsapp-image.png",
+        width: 762,
+        height: 400,
+        alt: "Dark blue image with white text that reads 'Mugtaba Garoot. Web. Dev. Design.' and a white logo in the bottom right corner.",
+      },
+    ]
+  }
 };
 
 export default function RootLayout({
