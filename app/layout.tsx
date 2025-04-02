@@ -5,8 +5,9 @@ import {
   // Plus_Jakarta_Sans 
 } from "next/font/google";
 import "./globals.css";
-import { Container, Box, Flex } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import { Provider } from "@/components/ui/provider";
+import Footer from "@/components/design/footer";
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-be-vietnam-pro",
@@ -40,19 +41,19 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Dark blue image with white text that reads 'Mugtaba Garoot. Web. Dev. Design.' and a white logo in the bottom right corner.",
+        alt: "Dark blue image with white text that reads 'Mugtaba Garoot. Web, Dev, Design.' and a white logo in the bottom right corner.",
       },
       {
         url: "/twitter-image.png",
         width: 1200,
         height: 675,
-        alt: "Dark blue image with white text that reads 'Mugtaba Garoot. Web. Dev. Design.' and a white logo in the bottom right corner.",
+        alt: "Dark blue image with white text that reads 'Mugtaba Garoot. Web, Dev, Design.' and a white logo in the bottom right corner.",
       },
       {
         url: "/whatsapp-image.png",
         width: 762,
         height: 400,
-        alt: "Dark blue image with white text that reads 'Mugtaba Garoot. Web. Dev. Design.' and a white logo in the bottom right corner.",
+        alt: "Dark blue image with white text that reads 'Mugtaba Garoot. Web, Dev, Design.' and a white logo in the bottom right corner.",
       },
     ]
   }
@@ -69,18 +70,9 @@ export default function RootLayout({
         className={`${beVietnamPro.variable} ${geistMono.variable} antialiased`}
       >
         <Provider forcedTheme="dark">
-          <Box textAlign={'center'} color={'white'} bg={'black'} p={2}>
-            website under construction
-          </Box>
           <Container marginInline={'auto'} maxW="breakpoint-lg" p={4} spaceY={8}>
             {children}
-            <Flex as={'footer'} 
-            color={'fg.muted'} 
-            justifyContent={'between'} 
-            py={{base:'3rem 5rem', md:'3rem 1.5rem'}}
-            mt={16}>
-                {`@${new Date().getFullYear()} Mugtaba G // Oddward`}
-            </Flex>
+            <Footer />
           </Container>
         </Provider>
       </body>
