@@ -1,5 +1,6 @@
 import { Box, Grid, Image, Text, Container } from '@chakra-ui/react'
 import { useColorModeValue } from '../ui/color-mode'
+
 interface LogoProps {
     src: string
     alt: string
@@ -26,18 +27,23 @@ const LogoWall = ({
     opacity = 0.5,
     maxLogoWidth = "120px"
 }: LogoWallProps) => {
-    const bgColor = useColorModeValue('gray.50', 'gray.900')
-    const textColor = useColorModeValue('gray.600', 'gray.400')
+    // const bgColor = useColorModeValue('gray.50', 'gray.900')
+    // const textColor = useColorModeValue('gray.600', 'gray.400')
     
     return (
-        <Box py={12} bg={bgColor}>
-            <Container maxW="container.xl">
+        // <Box py={12} bgColor="fg/20">
+            <Container 
+            maxW="container.xl"
+            p={8}
+            color={'fg.subtle'}
+            bgColor="fg/10" 
+            borderRadius={'md'}
+            >
                 {title && (
                     <Text 
                         textAlign="center" 
                         fontSize="lg" 
                         fontWeight="medium" 
-                        color={textColor}
                         mb={subtitle ? 2 : 8}
                     >
                         {title}
@@ -48,7 +54,6 @@ const LogoWall = ({
                     <Text
                         textAlign="center"
                         fontSize="md"
-                        color={textColor}
                         mb={8}
                     >
                         {subtitle}
@@ -76,6 +81,7 @@ const LogoWall = ({
                             <Image
                                 src={logo.src}
                                 alt={logo.alt}
+                                title={logo.alt}
                                 width={logo.width}
                                 height={logo.height}
                                 objectFit="contain"
@@ -84,7 +90,7 @@ const LogoWall = ({
                     ))}
                 </Grid>
             </Container>
-        </Box>
+        // </Box>
     )
 }
 

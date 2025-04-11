@@ -6,12 +6,14 @@ interface PillTextProps {
     text: string
     children?: ReactNode
     className?: string
+    color?: string
     bg?: string
 }
 
 export const PillText: React.FC<PillTextProps> = ({ 
     text, 
     children, 
+    color = "fg.muted",
     bg,
     ...props 
 }) => {
@@ -25,7 +27,7 @@ export const PillText: React.FC<PillTextProps> = ({
             py={2}
             borderRadius="full"
             bg={bg ? bg : "bg.subtle"}
-            color={"fg.muted"}
+            color={color}
             {...props}
         >
             <Text fontSize="md" fontWeight="medium">{text}</Text>

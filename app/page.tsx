@@ -6,12 +6,13 @@ import { Box, Card, Grid, GridItem, Heading, Highlight, Icon, Image, Link, LinkO
 import { DiCss3, DiFirebase, DiHtml5, DiReact, } from "react-icons/di";
 import { LuFigma } from "react-icons/lu";
 import { RiArrowRightLine, RiDribbbleLine, RiExternalLinkLine, RiGithubLine, RiInstagramLine, RiNextjsFill, RiQuillPenFill, RiTeamLine, RiVuejsFill } from "react-icons/ri";
-import { SiAdobe, SiAffinity, SiBlender } from "react-icons/si";
+import { SiAdobe, SiAffinity, SiBlender, SiRive } from "react-icons/si";
 import { DividerHeading } from "@/components/design/dividerheading";
 import ProjectCard from "@/components/design/projectcard";
 import { BentoCard } from "@/components/design/bentocard";
 import { Navbar } from "@/components/design/navbar";
 import ProjectGrid from "@/components/design/projectgrid";
+import LogoWall from "@/components/design/logowall";
 
 export default function Home() {
   return (
@@ -51,13 +52,15 @@ export default function Home() {
             <FramedIcon label="Affinity suite"><SiAffinity /></FramedIcon>
             <FramedIcon label="Adobe"><SiAdobe /></FramedIcon>
             <FramedIcon label="Blender"><SiBlender /></FramedIcon>
+            <FramedIcon label="Rive"><SiRive /></FramedIcon>
           </Grid>
         {/* </VStack> */}
       </Grid>
 
+
       <Box as={'section'} display={'flex'} gap={'4'} flexWrap={'wrap'} py={'12'}>
-        <PillText text={'Available for work'} bg="black" className="bg-black">
-          <RiArrowRightLine />
+        <PillText text={'Available for work'} bg="black" color="green.400" className="bg-black">
+          <RiArrowRightLine color="white" />
         </PillText>
         <PillText text={'Web design'} />
         <PillText text={'Web development'} />
@@ -65,7 +68,20 @@ export default function Home() {
         <PillText text={'Branding'} />
       </Box>
 
+      <LogoWall logos={[
+        { src: '/img/logo_RITE_International_Inc.png', alt: 'RITE International Inc.', width: 200, height: 120 },
+        { src: '/img/logo_niagaralauncher.png', alt: 'Niagara Launcher', width: 200, height: 120 },
+        { src: '/img/logo_kushtechdynamics(2).png', alt: 'KushTech Dynamics LLC', width: 200, height: 120 },
+        { src: '/img/logo_mothersgift.png', alt: 'A Mother\'s Gift LLC', width: 200, height: 120 },
+        { src: '/img/logo_bignoo_icon.png', alt: 'Big Noo LTD', width: 200, height: 120 },
+      ]} 
+      // title="Trusted by" 
+      opacity={0.65} 
+      maxLogoWidth={'100px'}
+      />
+
       <Navbar />
+
 
       <Grid as={'section'} 
       templateColumns={{base:'1fr', md:'1fr 1fr'}} 

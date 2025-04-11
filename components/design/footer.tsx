@@ -2,7 +2,7 @@ import { Flex, HStack, Icon, Link } from "@chakra-ui/react";
 import { RiBlueskyLine, RiGithubLine, RiInstagramLine, RiLinkedinLine, RiTwitterLine } from "react-icons/ri";
 
 const socials = [
-    { name: 'Bluesky', href: 'https://bsky.app/profile/oddwardio.bsky.social', icon: <RiBlueskyLine /> },
+    { name: 'Bluesky', href: 'https://bsky.app/profile/oddward.space', icon: <RiBlueskyLine /> },
     { name: 'X (formerly Twitter)', href: 'https://x.com/oddward_io', icon: <RiTwitterLine /> },
     { name: 'Instagram', href: 'https://instagram.com/mugtaba.g', icon: <RiInstagramLine /> },
     { name: 'Github', href: 'https://github.com/Oddward', icon: <RiGithubLine /> },

@@ -4,12 +4,13 @@ import Logo from "./logo"
 import { useEffect, useRef, useState } from "react"
 import { Button } from "../ui/button"
 import { RiBlueskyLine, RiHome3Line, RiInstagramLine, RiLinkedinLine, RiMessage3Line, RiTwitterLine } from "react-icons/ri"
-import { IoMdPerson } from "react-icons/io"
+import { IoMdPerson, IoMdPhotos } from "react-icons/io"
 import { Field } from "../ui/field"
 
 const pages = [
     { name: 'home', href: '/', icon: <RiHome3Line /> },
     { name: 'about', href: '/about', icon: <IoMdPerson /> },
+    { name: 'gallery', href: '/gallery', icon: <IoMdPhotos /> },
 ]
 
 const socials = [
@@ -117,7 +118,7 @@ export const Navbar: React.FC = ({...props}) => {
                         color={'fg.muted'} fill={isContactOpen ? 'colorPalette.solid':'fg.muted'}
                         onClick={ toggleContact }>
                             <Span>Contact</Span>
-                            <Icon fontSize={'lg'} size={'lg'}><RiMessage3Line /></Icon>
+                            <Icon fontSize={'lg'} size={'lg'} color={'yellow.600'}><RiMessage3Line /></Icon>
                         </Button>
                     </List.Item>
                 </List.Root>
