@@ -1,5 +1,4 @@
 import { Box, Grid, Image, Text, Container } from '@chakra-ui/react'
-import { useColorModeValue } from '../ui/color-mode'
 
 interface LogoProps {
     src: string
@@ -27,8 +26,6 @@ const LogoWall = ({
     opacity = 0.5,
     maxLogoWidth = "120px"
 }: LogoWallProps) => {
-    // const bgColor = useColorModeValue('gray.50', 'gray.900')
-    // const textColor = useColorModeValue('gray.600', 'gray.400')
     
     return (
         // <Box py={12} bgColor="fg/20">
