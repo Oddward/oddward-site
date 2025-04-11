@@ -138,9 +138,11 @@ export default function Gallery() {
 
             <Box as={'section'} pb={16} pt={2}>
                     <Heading as="h1" 
+                    display={"inline-block"}
                     fontSize="6xl" 
                     fontWeight={'black'} 
                     bgGradient="warm" 
+                    // bg={"linear(to-l, orange, fuscia)"}
                     bgClip={'text'} 
                     lineHeight={1.3}
                     // textTransform={'uppercase'} 

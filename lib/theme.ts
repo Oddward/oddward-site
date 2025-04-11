@@ -113,7 +113,7 @@ const customConfig = defineConfig({
 theme: {
     tokens: {
         gradients: {
-            warm: { value: "linear-gradient(to bottom right, #f6d365 0%, #fda085 100%)" },
+            warm: { value: `linear-gradient(to bottom right, ${colors.amber[500]} 0%, ${colors.red[600]} 100%)` },
             instagram: { value: "radial-gradient(ellipse at top left, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)" },
         },
         colors: {

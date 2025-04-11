@@ -115,10 +115,10 @@ export const Navbar: React.FC = ({...props}) => {
                     ))}
                     <List.Item>
                         <Button variant={'ghost'} 
-                        color={'fg.muted'} fill={isContactOpen ? 'colorPalette.solid':'fg.muted'}
+                        color={'fg.muted'} fill={isContactOpen ? 'colorPalette.500':'fg.muted'}
                         onClick={ toggleContact }>
                             <Span>Contact</Span>
-                            <Icon fontSize={'lg'} size={'lg'} color={'yellow.600'}><RiMessage3Line /></Icon>
+                            <Icon fontSize={'lg'} size={'lg'} color={'yellow.500'}><RiMessage3Line /></Icon>
                         </Button>
                     </List.Item>
                 </List.Root>
@@ -183,6 +183,7 @@ export const Navbar: React.FC = ({...props}) => {
                         </Fieldset.HelperText>
                         <Button 
                             variant={'solid'}
+                            bgColor={'yellow.500'}
                             type="submit" w="full"
                             onClick={ () => handleSubmit }
                             disabled={isLoading}
