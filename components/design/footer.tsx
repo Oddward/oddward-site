@@ -1,12 +1,43 @@
 import { Flex, HStack, Icon, Link } from "@chakra-ui/react";
-import { RiBlueskyLine, RiGithubLine, RiInstagramLine, RiLinkedinLine, RiTwitterLine } from "react-icons/ri";
+import { RiBlueskyLine, RiGithubLine, RiInstagramLine, RiLinkedinLine, RiThreadsLine, RiTwitterLine } from "react-icons/ri";
 
 const socials = [
-    { name: 'Bluesky', href: 'https://bsky.app/profile/oddward.space', rel: 'me', icon: <RiBlueskyLine /> },
-    { name: 'X (formerly Twitter)', href: 'https://x.com/oddward_io', rel: 'me', icon: <RiTwitterLine /> },
-    { name: 'Instagram', href: 'https://instagram.com/mugtaba.g', rel: 'me', icon: <RiInstagramLine /> },
-    { name: 'Github', href: 'https://github.com/Oddward', rel: 'me', icon: <RiGithubLine /> },
-    { name: 'Linkedin', href: 'https://linkedin.com/in/mugtabagaroot', rel: 'me', icon: <RiLinkedinLine /> },
+    { 
+        name: 'Bluesky', 
+        href: 'https://bsky.app/profile/oddward.space', 
+        rel: 'me noopener', 
+        icon: <RiBlueskyLine /> 
+    },
+    { 
+        name: 'Threads', 
+        href: 'https://www.threads.net/@mugtaba.g', 
+        rel: 'me noopener', 
+        icon: <RiThreadsLine /> 
+    },
+    { 
+        name: 'X (formerly Twitter)', 
+        href: 'https://x.com/oddward_io', 
+        rel: 'me noopener', 
+        icon: <RiTwitterLine /> 
+    },
+    { 
+        name: 'Instagram', 
+        href: 'https://instagram.com/mugtaba.g', 
+        rel: 'me noopener', 
+        icon: <RiInstagramLine /> 
+    },
+    { 
+        name: 'Github', 
+        href: 'https://github.com/Oddward', 
+        rel: 'me noopener', 
+        icon: <RiGithubLine /> 
+    },
+    { 
+        name: 'Linkedin', 
+        href: 'https://linkedin.com/in/mugtabagaroot', 
+        rel: 'me noopener', 
+        icon: <RiLinkedinLine /> 
+    },
 ]
 
 interface FooterProps {
@@ -28,7 +59,7 @@ const Footer: React.FC<FooterProps> = () => {
                     <Link key={index} 
                     href={social.href} 
                     target="_blank" 
-                    rel="me noopener" 
+                    rel={social.rel} 
                     aria-label={social.name} 
                     color={'fg.muted'} 
                     fontSize={'2xl'}
