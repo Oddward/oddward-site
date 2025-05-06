@@ -38,6 +38,12 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
+        url: "/whatsapp-image.png",
+        width: 762,
+        height: 400,
+        alt: "Dark blue image with white text that reads 'Mugtaba Garoot. Web, Dev, Design.' and a white logo in the bottom right corner.",
+      },
+      {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
@@ -47,12 +53,6 @@ export const metadata: Metadata = {
         url: "/twitter-image.png",
         width: 1200,
         height: 675,
-        alt: "Dark blue image with white text that reads 'Mugtaba Garoot. Web, Dev, Design.' and a white logo in the bottom right corner.",
-      },
-      {
-        url: "/whatsapp-image.png",
-        width: 762,
-        height: 400,
         alt: "Dark blue image with white text that reads 'Mugtaba Garoot. Web, Dev, Design.' and a white logo in the bottom right corner.",
       },
     ]
