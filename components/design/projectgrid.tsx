@@ -10,8 +10,8 @@ const projectGridStyle = {
     // 'boxSizing': 'bounding-box',
     'transition': 'border-color 0.2s ease',
     '&:hover': {
-        // 'background': 'rgb(255 255 255 / 5%)',
-        'borderColor': 'var(--chakra-colors-border)',
+        'background': 'rgb(255 255 255 / 5%)',
+        // 'borderColor': 'var(--chakra-colors-border)',
     },
     '& img': {
         'width': '100%',

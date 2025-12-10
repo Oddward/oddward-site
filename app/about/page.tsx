@@ -51,7 +51,7 @@ export default function About() {
         </Flex>
 
         <DividerHeading title="Development" />
-        <Card.Root variant={'outline'} bgColor={'unset'}>
+        <Card.Root variant={'subtle'} bgColor={'blackAlpha.500'}>
             <Card.Body>
                 <Flex flexDir={'column'} gap={2}>
                     <Text>Solid experience with HTML5, CSS3, some JS and TypeScript. Focused on frontend design & development with competence in the full stack.</Text>
@@ -71,7 +71,7 @@ export default function About() {
         </Grid>
         
         <DividerHeading title="Design" />
-        <Card.Root variant={'outline'} bgColor={'unset'}>
+        <Card.Root variant={'subtle'} bgColor={'blackAlpha.500'}>
             <Card.Body>
                 <Flex flexDir={'column'} gap={2}>
                     <Text>Self-taught illustrator and designer doing freelancing and occasionally using content creation to improve my craft.</Text>

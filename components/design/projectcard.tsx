@@ -24,6 +24,7 @@ export default function ProjectCard({
             bgImage={`url("${src}")`}
             bgSize="cover"
             bgRepeat="no-repeat"
+            className="group"
         >
             <Box
             w="full"
@@ -38,7 +39,10 @@ export default function ProjectCard({
                     p={4}
                 >
                     <Heading as="h3" size="lg">{title}</Heading>
-                    <Center w={8} h={8} borderRadius="full" bg="blackAlpha.500">
+                    <Center w={8} h={8} borderRadius="full" bg="blackAlpha.500" transition={'all .1s'} 
+                    transitionTimingFunction={'linear'}
+                    _groupHover={{ bg: "white", color: "black" }}
+                    >
                         <Icon asChild>
                             <RiArrowRightUpLine />
                         </Icon>
