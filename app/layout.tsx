@@ -8,6 +8,7 @@ import "./globals.css";
 import { Container } from "@chakra-ui/react";
 import { Provider } from "@/components/ui/provider";
 import Footer from "@/components/design/footer";
+import { IntroProvider } from "@/components/design/intro";
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-be-vietnam-pro",
@@ -65,15 +66,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
       <body
         className={`${beVietnamPro.variable} ${geistMono.variable} antialiased`}
       >
-        <Provider forcedTheme="dark">
-          <Container marginInline={'auto'} maxW="breakpoint-lg" p={4} spaceY={8}>
-            {children}
-            <Footer />
-          </Container>
+        <Provider>
+          <IntroProvider>
+            <Container marginInline={'auto'} maxW="breakpoint-lg" p={4} spaceY={8}>
+              {children}
+              <Footer />
+            </Container>
+          </IntroProvider>
         </Provider>
       </body>
     </html>

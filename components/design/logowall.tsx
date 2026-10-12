@@ -33,7 +33,7 @@ const LogoWall = ({
             maxW="container.xl"
             p={8}
             color={'fg.subtle'}
-            bgColor="fg/10" 
+            bgColor="fg/1" 
             borderRadius={'md'}
             >
                 {title && (

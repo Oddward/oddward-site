@@ -1,7 +1,8 @@
 'use client'
-import { Fieldset, Flex, Heading, HStack, Icon, Input, Link, List, Span, Text, Textarea, VStack } from "@chakra-ui/react"
+import { Box, Fieldset, Flex, Heading, HStack, Icon, Input, Link, List, Span, Text, Textarea, VStack } from "@chakra-ui/react"
 import Logo from "./logo"
-import { useEffect, useRef, useState } from "react"
+import { PageLink, useIntroDone } from "./intro"
+import { useEffect, useRef, useState, ViewTransition } from "react"
 import { Button } from "../ui/button"
 import { RiBlueskyLine, RiHome3Line, RiInstagramLine, RiLinkedinLine, RiMessage3Line, RiTwitterLine } from "react-icons/ri"
 import { IoMdPerson, IoMdPhotos } from "react-icons/io"
@@ -26,6 +27,7 @@ export const Navbar: React.FC = ({...props}) => {
     const [isLoading, setIsLoading] = useState(false)
     const [height, setHeight] = useState<string>('0')
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+    const introDone = useIntroDone()
 
     useEffect(() => {
         updateHeight()
@@ -88,9 +90,15 @@ export const Navbar: React.FC = ({...props}) => {
             {...props}
             >
             <HStack justifyContent={'space-between'}>
-                <Link href="/" w={8} h={8}>
-                    <Logo />
-                </Link>
+                <PageLink href="/" w={8} h={8}>
+                    {introDone && (
+                        <ViewTransition name="brand-logo" share="logo-morph" default="none">
+                            <Box w={8} h={8}>
+                                <Logo />
+                            </Box>
+                        </ViewTransition>
+                    )}
+                </PageLink>
 
                 <List.Root 
                 // display={{mdDown:'none'}}
@@ -102,7 +110,7 @@ export const Navbar: React.FC = ({...props}) => {
                 >
                     {pages.map((page) => (
                         <List.Item key={page.name}>
-                            <Link href={page.href} variant={'plain'}
+                            <PageLink href={page.href} variant={'plain'}
                             color={'fg.muted'} 
                             borderRadius={'sm'}
                             p={2}
@@ -110,7 +118,7 @@ export const Navbar: React.FC = ({...props}) => {
                             >
                                 <Icon display={{md:'none'}} size={'lg'}>{ page.icon }</Icon>
                                 <Span display={{mdDown:'none'}}>{page.name}</Span>
-                            </Link>
+                            </PageLink>
                         </List.Item>
                     ))}
                     <List.Item>

@@ -23,3 +23,30 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Be Vietnam Pro", Arial, Helvetica, sans-serif;
 }
+
+/* Intro: logo morphs from the splash into the navbar, splash fades out behind it */
+::view-transition-group(.logo-morph) {
+  /* The loader is captured after the logo when it opens, so it would paint over the morph */
+  z-index: 1;
+  animation-duration: 700ms;
+  animation-timing-function: cubic-bezier(.2, .8, .2, 1);
+}
+::view-transition-old(.intro-out) {
+  animation: intro-fade-out 400ms ease-out both;
+}
+@keyframes intro-fade-out {
+  to { opacity: 0; }
+}
+::view-transition-new(.intro-in) {
+  animation: intro-fade-in 300ms ease-out both;
+}
+@keyframes intro-fade-in {
+  from { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

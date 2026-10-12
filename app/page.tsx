@@ -57,6 +57,7 @@ export default function Home() {
         {/* </VStack> */}
       </Grid>
 
+      <Navbar />
 
       <Box as={'section'} display={'flex'} gap={'4'} flexWrap={'wrap'} py={'12'}>
         <PillText text={'Available for work'} bg="black" color="green.400" className="bg-black">
@@ -68,21 +69,6 @@ export default function Home() {
         <PillText text={'Branding'} />
       </Box>
 
-      <LogoWall logos={[
-        { src: '/img/logo_RITE_International_Inc.png', alt: 'RITE International Inc.', width: 200, height: 120 },
-        { src: '/img/logo_niagaralauncher.png', alt: 'Niagara Launcher', width: 200, height: 120 },
-        { src: '/img/logo_kushtechdynamics(2).png', alt: 'KushTech Dynamics LLC', width: 200, height: 120 },
-        { src: '/img/logo_mothersgift.png', alt: 'A Mother\'s Gift LLC', width: 200, height: 120 },
-        { src: '/img/logo_bignoo_icon.png', alt: 'Big Noo LTD', width: 200, height: 120 },
-      ]} 
-      // title="Trusted by" 
-      opacity={0.65} 
-      maxLogoWidth={'100px'}
-      />
-
-      <Navbar />
-
-
       <Grid as={'section'} 
       templateColumns={{base:'1fr', md:'1fr 1fr'}} 
       // templateAreas={`'current post' 'links post'`} 
@@ -93,7 +79,7 @@ export default function Home() {
         // h={'full'}
         borderRadius={'md'} 
         p={4} 
-        _hover={{bg:'fg/7'}} 
+        // _hover={{bg:'fg/7'}} 
         >
           <Text as={'h3'} fontSize={'md'} fontWeight={'bold'} display={'flex'} alignItems={'center'} gap={2}>
             <RiTeamLine /> Current associations
@@ -153,6 +139,18 @@ export default function Home() {
           </Card.Root>
         </GridItem>
       </Grid>
+
+      <LogoWall logos={[
+        { src: '/img/logo_RITE_International_Inc.png', alt: 'RITE International Inc.', width: 200, height: 120 },
+        { src: '/img/logo_niagaralauncher.png', alt: 'Niagara Launcher', width: 200, height: 120 },
+        { src: '/img/logo_kushtechdynamics(2).png', alt: 'KushTech Dynamics LLC', width: 200, height: 120 },
+        { src: '/img/logo_mothersgift.png', alt: 'A Mother\'s Gift LLC', width: 200, height: 120 },
+        { src: '/img/logo_bignoo_icon.png', alt: 'Big Noo LTD', width: 200, height: 120 },
+      ]} 
+      // title="Trusted by" 
+      opacity={0.65} 
+      maxLogoWidth={'100px'}
+      />
 
       <DividerHeading title="Stuff" />
       <Box 

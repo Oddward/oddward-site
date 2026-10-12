@@ -3,11 +3,12 @@
 import { DividerHeading } from "@/components/design/dividerheading";
 import { FramedIcon } from "@/components/design/framedicon";
 import { Navbar } from "@/components/design/navbar";
-import { Box, Card, Flex, Grid, HStack, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Card, Flex, Grid, HStack, Image, Link, Text, Popover } from "@chakra-ui/react";
 import { DiCss3, DiFirebase, DiHtml5, DiReact, } from "react-icons/di";
 import { SiAdobe, SiAffinity, SiBlender, SiDavinciresolve, SiFigma, SiRive } from "react-icons/si";
 import { RiNextjsFill, RiVuejsFill } from "react-icons/ri";
 import { socials } from "@/lib/profile";
+import { Tooltip } from "@/components/ui/tooltip";
 
 
 export default function About() {
@@ -35,7 +36,14 @@ export default function About() {
                             <Text mt={4}>Usually found consuming tonnes of media (especially animation), practicing the craft, gaming, and/or hanging out on a discord chat.</Text>
                             <HStack gap={4}>
                                 {socials.map((social, i) => (
-                                    <Link key={i} href={social.href} fontSize="lg" color="fg.muted" _hover={{color:"colorPalette.solid"}}>{social.icon}</Link>
+                                    <Tooltip key={i} content={social.handle} positioning={{placement:'top'}} showArrow>
+                                        <Link href={social.href} 
+                                            fontSize="lg" color="fg.muted" 
+                                            _hover={{color:"colorPalette.solid"}}
+                                            >
+                                            {social.icon}
+                                        </Link>
+                                    </Tooltip>
                                 ))}
                             </HStack>
                         </Flex>
