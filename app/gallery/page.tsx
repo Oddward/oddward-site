@@ -2,6 +2,11 @@ import Masonry from "@/components/design/masonry";
 import { Navbar } from "@/components/design/navbar";
 import { Box, Heading, Image, Text } from "@chakra-ui/react";
 
+// @next-codemod-ignore Cache Components adoption: this segment temporarily allows blocking.
+// Remove this opt-out after verifying the segment passes validation without it.
+// See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
+export const instant = false;
+
 const imageList = [
     {
         src: "/img/gallery/Post_A.png",
