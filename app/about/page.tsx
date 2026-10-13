@@ -38,7 +38,7 @@ export default function About() {
                                 {socials.map((social, i) => (
                                     <Tooltip key={i} content={social.handle} positioning={{placement:'top'}} showArrow>
                                         <Link href={social.href} 
-                                            fontSize="lg" color="fg.muted" 
+                                            fontSize="xl" color="fg.muted" 
                                             _hover={{color:"colorPalette.solid"}}
                                             >
                                             {social.icon}
