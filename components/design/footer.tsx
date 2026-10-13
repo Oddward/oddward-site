@@ -1,5 +1,6 @@
 import { Flex, HStack, Icon, Link } from "@chakra-ui/react";
 import { RiBlueskyLine, RiGithubLine, RiInstagramLine, RiLinkedinLine, RiThreadsLine, RiTwitterLine } from "react-icons/ri";
+import { Tooltip } from "@components/ui/tooltip";
 
 const socials = [
     { 
@@ -56,20 +57,22 @@ const Footer: React.FC<FooterProps> = () => {
 
             <HStack gap={2} fontSize={'md'}>
                 {socials.map((social, index) => (
-                    <Link key={index} 
-                    href={social.href} 
-                    target="_blank" 
-                    rel={social.rel} 
-                    aria-label={social.name} 
-                    color={'fg.muted'} 
-                    fontSize={'2xl'}
-                    _hover={{color:'white'}}
-                    _focus={{boxShadow:'outline'}}
-                    >
-                        <Icon boxSize={6}>
-                            {social.icon}
-                        </Icon>
-                    </Link>
+                    <Tooltip key={index} content={social.name} positioning={{placement:'top'}} showArrow>
+                        <Link
+                        href={social.href} 
+                        target="_blank" 
+                        rel={social.rel} 
+                        aria-label={social.name} 
+                        color={'fg.muted'} 
+                        fontSize={'2xl'}
+                        _hover={{color:'white'}}
+                        _focus={{boxShadow:'outline'}}
+                        >
+                            <Icon boxSize={6}>
+                                {social.icon}
+                            </Icon>
+                        </Link>
+                    </Tooltip>
                 ))}
             </HStack>
         </Flex>
