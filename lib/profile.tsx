@@ -1,4 +1,4 @@
-import { RiMastodonFill } from "react-icons/ri";
+import { RiMastodonFill, RiTwitterFill } from "react-icons/ri";
 import { SiDribbble, SiGithub, SiInstagram, SiThreads, SiBluesky } from "react-icons/si";
 
 const ICONSIZE = 8
@@ -26,7 +26,7 @@ export const socials = [
         name: 'Twitter',
         href: 'https://x.com/@oddward_io',
         handle: '@oddward_io',
-        icon: <RiMastodonFill width={ICONSIZE} height={ICONSIZE} />
+        icon: <RiTwitterFill width={ICONSIZE} height={ICONSIZE} />
     },
     {
         name: 'GitHub',
