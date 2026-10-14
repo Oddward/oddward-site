@@ -16,7 +16,7 @@ export default function About() {
       <>
         <Navbar />
 
-        <Box as={'section'} pb={16} pt={10} px={4}>
+        <Box as={'section'} pb={16} pt={0} px={4} md={{pt:16}}>
             <Card.Root variant={'outline'} bgColor={'transparent'}>
                 <Card.Body>
                     <Grid templateColumns={{md:'1fr 2fr'}} templateAreas={{
@@ -28,7 +28,7 @@ export default function About() {
                             <Image src="/me_halftonegrad.jpg" alt="A placeholder image" width={'auto'} height={'full'} maxW={200} aspectRatio={1/1.5} border="solid 1px --chakra-colors-color-palette-subtle" borderRadius="full" />
                         </Flex>
                         <Box gridArea={'title'}>
-                            <Text as="h2" fontSize="4xl" fontWeight={'black'} bgGradient="warm" bgClip={'text'} textTransform={'uppercase'} w={'auto'}>Mugtaba Garoot</Text>
+                            <Text as="h2" fontSize="4xl" fontWeight={'black'} bgGradient="warm" bgClip={'text'} textTransform={'uppercase'} w={'auto'} lineHeight={1.2}>Mugtaba Garoot</Text>
                             <Text as="span" fontSize="md" color="fg.muted">Developer // Designer // Digital content creator</Text>
                         </Box>
                         <Flex flexDir={'column'} gap={4} gridArea={'desc'}>
