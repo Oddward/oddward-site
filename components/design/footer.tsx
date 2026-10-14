@@ -53,6 +53,7 @@ const Footer: React.FC<FooterProps> = () => {
         color={'fg.muted'} 
         justifyContent={'space-between'} 
         wrap={'wrap'}
+        gap={4}
         py={{base:'3rem 5rem', md:'3rem 1.5rem'}}
         mt={16}>
             {`@${new Date().getFullYear()} Mugtaba G // Oddward`}
