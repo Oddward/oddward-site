@@ -1,3 +1,5 @@
+'use client'
+
 import { Flex, HStack, Icon, Link } from "@chakra-ui/react";
 import { RiBlueskyLine, RiGithubLine, RiInstagramLine, RiLinkedinLine, RiThreadsLine, RiTwitterLine } from "react-icons/ri";
 import { Tooltip } from "@components/ui/tooltip";

@@ -4,14 +4,13 @@ import Logo from "./logo"
 import { PageLink, useIntroDone } from "./intro"
 import { useEffect, useRef, useState, ViewTransition } from "react"
 import { Button } from "../ui/button"
-import { RiBlueskyLine, RiHome3Line, RiInstagramLine, RiLinkedinLine, RiMessage3Line, RiTwitterLine } from "react-icons/ri"
-import { IoMdPerson, IoMdPhotos } from "react-icons/io"
+import { RiBlueskyLine, RiGalleryLine, RiHome3Line, RiInstagramLine, RiLinkedinLine, RiMessage3Line, RiTwitterLine, RiUserSmileLine } from "react-icons/ri"
 import { Field } from "../ui/field"
 
 const pages = [
     { name: 'home', href: '/', icon: <RiHome3Line /> },
-    { name: 'about', href: '/about', icon: <IoMdPerson /> },
-    { name: 'gallery', href: '/gallery', icon: <IoMdPhotos /> },
+    { name: 'about', href: '/about', icon: <RiUserSmileLine /> },
+    { name: 'gallery', href: '/gallery', icon: <RiGalleryLine /> },
 ]
 
 const socials = [
@@ -125,7 +124,7 @@ export const Navbar: React.FC = ({...props}) => {
                         <Button variant={'ghost'} 
                         color={'fg.muted'} fill={isContactOpen ? 'colorPalette.500':'fg.muted'}
                         onClick={ toggleContact }>
-                            <Span>Contact</Span>
+                            <Span display="none" md={{display:"inline-block"}}>Contact</Span>
                             <Icon fontSize={'lg'} size={'lg'} color={'yellow.500'}><RiMessage3Line /></Icon>
                         </Button>
                     </List.Item>
