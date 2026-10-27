@@ -17,6 +17,7 @@ export const useIntroDone = () => useContext(IntroContext).done
 
 export const IntroProvider = ({ children }: { children: React.ReactNode }) => {
     const router = useRouter()
+    const pathname = usePathname()
     const [done, setDone] = useState(false)
     const [step, setStep] = useState(0)
     // Page to open once the loader finishes, set when it was started by a link click
@@ -34,17 +35,25 @@ export const IntroProvider = ({ children }: { children: React.ReactNode }) => {
                 const firstPaint = performance.getEntriesByName('first-contentful-paint')[0]?.startTime ?? 0
                 delay = Math.max(0, stepMs - (performance.now() - firstPaint))
             }
-            const t = setTimeout(() => setStep(step + 1), delay)
+            const t = setTimeout(() => {
+                setStep(step + 1)
+                // Swap the page behind the loader in its own transition, not the logo morph's:
+                // unmounting the old page stops Chakra (zag) machines, which call flushSync,
+                // and React skips any view transition that's still preparing when that happens
+                const href = pendingHref.current
+                if (step === 0 && href) startTransition(() => router.push(href))
+            }, delay)
             return () => clearTimeout(t)
         }
+        // Hold the loader until the new page is in place
+        if (pendingHref.current && pathname !== pendingHref.current) return
         // Must run inside a transition so the logo morphs into the navbar
         const t = setTimeout(() => startTransition(() => {
-            if (pendingHref.current) router.push(pendingHref.current)
             pendingHref.current = null
             setDone(true)
         }), holdMs)
         return () => clearTimeout(t)
-    }, [step, done, router])
+    }, [step, done, router, pathname])
 
     const navigate = useCallback((href: string) => {
         router.prefetch(href)
